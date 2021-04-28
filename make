@@ -1,8 +1,10 @@
 #!/bin/zsh
 
 rm -fr build
-cd ../thunderbolt-framework; tsc; cd ../tbTest
-npm install ../thunderbolt-framework
-
-node_modules/.bin/tbx build
+cd ../thunderbolt-common; tsc
+cd ../thunderbolt-desktop; tsc
+cd ../thunderbolt-mobile; tsc
+cd ../thunderbolt-cli; tsc
+cd ../tbTest
+tbx build .
 

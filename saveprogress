@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+cmt=$1
+
+cd ../thunderbolt-desktop
+pwd
+git commit -am "${cmt}"
+git push
+cd ../thunderbolt-common
+pwd
+git commit -am "${cmt}"
+git push
+cd ../thunderbolt-mobile
+pwd
+git commit -am "${cmt}"
+git push
+cd ../thunderbolt-cli
+pwd
+git commit -am "${cmt}"
+git push
+cd ../tbTest
+pwd
+git commit -am "${cmt}"
+git push
+
