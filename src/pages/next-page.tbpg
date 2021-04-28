@@ -1,0 +1,9 @@
+#page next
+title="Next Page"
+menu-id="next"
+toolbar-id="main"
+indicators-id="main"
+
+#content
+    <simple-label bind="testValues.mainLabel as text" text="Hello, this is the next page"/>
+    <test-comp action="onClick" text="Well Howdy"/>

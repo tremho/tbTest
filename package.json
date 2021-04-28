@@ -1,0 +1,22 @@
+{
+  "name": "tbTest",
+  "version": "1.0.0",
+  "projId": "com.tremho.tbtest",
+  "description": "tester during development for thunderbolt-platform",
+  "backMain": "src/tbAppBack.ts",
+  "frontMain": "src/tbAppFront.ts",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devMake": "./make",
+    "devRun": "./make && tbx run",
+    "build": "tbx build",
+    "run": "tbx run",
+    "nativescript": "./make && tbx nativescript",
+    "nsAlone": "tbx nativescript",
+    "makeMobile": "./makemobile"
+  },
+  "author": "tremho",
+  "license": "ISC"
+}

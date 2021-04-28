@@ -1,0 +1,14 @@
+#page main
+
+// no-title
+no-back
+title="Main Page"
+menu-id="main"
+toolbar-id="main"
+indicators-id="main"
+
+#content
+    <simple-label bind="testValues.mainLabel as text" text="Hello"/>
+    <simple-button text="Go to Next Page" action="onClick"/>
+    <simple-button text="Toggle Indicator" action="onIndTest"/>
+

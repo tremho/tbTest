@@ -1,0 +1,42 @@
+<file-test-page>
+<action-bar text="File API Tests" menu-id="main" />
+<simple-label text="The page-id is {b('navInfo.pageId')}"/>
+<simple-label text="App Path = {b('data.appPath')}"/>
+<simple-label text="file exists (existing) {b('data.exist1')}"/>
+<simple-label text="file exists (non-existing) {b('data.exist2')}"/>
+<simple-label text="read text {b('data.readText')}"/>
+<simple-label text="write text {b('data.writeText')}"/>
+<simple-label text="read written text {b('data.writeTextVerify')}"/>
+<simple-label text="read binary {b('data.readBinary')}"/>
+<simple-label text="write binary {b('data.writeBinary')}"/>
+<simple-label text="deleted file {b('data.delete')}"/>
+<simple-label text="renamed file {b('data.rename')}"/>
+<simple-label text="moved file {b('data.move')}"/>
+<simple-label text="copied file {b('data.copy')}"/>
+<simple-label text="tested Stats: {b('data.stats')}"/>
+<simple-label text="made folder tree: {b('data.mkdir')}"/>
+<simple-label text="{b('data.mkdir2')}"/>
+<simple-label text="{b('data.mkdir3')}"/>
+<simple-label text="{b('data.readFolder')}"/>
+<simple-label text="{b('data.rmdir')}"/>
+<simple-label text="{b('data.rmdir2')}"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+<fill-space height="1rem"/>
+
+    <script>
+      import pageComp from 'Framework/app-core/PageComp'
+      import * as activity from './file-test-page'
+      const pc =  Object.assign({}, pageComp)
+      pc.activity = activity
+      export default pc
+    </script>
+    </file-test-page>

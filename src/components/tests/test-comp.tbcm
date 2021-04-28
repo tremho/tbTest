@@ -1,0 +1,22 @@
+#component test-comp
+
+#layout
+    <div action="press">
+        <span>"$foobar"</span>
+    </div>
+
+beforeLayout() {
+    this.com.addProperty('bind', 'testValues.mainLabel as foobar')
+}
+
+onAction(ev) {
+    console.log("onAction called")
+}
+
+<style>
+    :host {
+        color: red;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+</style>

@@ -1,0 +1,14 @@
+<main-page>
+<action-bar no-back="true" text="Main Page" menu-id="main" toolbar-id="main" indicators-id="main"/>
+<simple-label bind="testValues.mainLabel as text" text="Hello"/>
+<simple-button text="Go to Next Page" action="onClick"/>
+<simple-button text="Toggle Indicator" action="onIndTest"/>
+
+    <script>
+      import pageComp from 'Framework/app-core/PageComp'
+      import * as activity from './main-page'
+      const pc =  Object.assign({}, pageComp)
+      pc.activity = activity
+      export default pc
+    </script>
+    </main-page>
