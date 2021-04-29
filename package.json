@@ -5,7 +5,12 @@
   "description": "tester during development for thunderbolt-platform",
   "backMain": "src/tbAppBack.ts",
   "frontMain": "src/tbAppFront.ts",
-  "dependencies": {},
+  "dependencies": {
+    "@riotjs/webpack-loader": "^5.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "riot": "^5.3.3",
+    "typescript": "^4.2.4"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

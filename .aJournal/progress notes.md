@@ -72,6 +72,27 @@ registerApp(targetPlatform, ourApp)
 Note the change to the first import and the parameter signature of
 `registerApp`.
 
+Or a better idea:
+```
+import {registerApp} from 'thunderbolt-desktop'
+import {TBBackApp, FrameworkBackContext} from "thunderbolt-common"
+
+class TBTestApp implements TBBackApp {
+
+    // ... snip...
+}
+
+const ourApp = new TBTestApp()
+registerApp(ourApp)
+```
+In this one, the beauty is we don't need to mess with the injection object
+at all because it gets picked up inherently by a `registerApp` function
+that lives in the desktop module.  
+
+We could go further with that and make all the imports come from the targeted
+module, but that risks going too far and making the common startup flow
+code divergent.
+
 On Nativescript export, 'thunderbolt-desktop' is renamed 'thunderbolt-mobile'
 and the rest should follow migration.
 
@@ -104,9 +125,99 @@ load from packPath (buildPack) as defined by tbx build, and of course
 there's no files there.
 Looks like these need to be there and compiled into build.
 
-- [ ] Let's hook that up and see what the next step is
+- [X] Let's hook that up and see what the next step is
+
+##### 4/29 wee AM
+
+- [X] Now check what other dependencies we had before.
+  - looks like:
+  - riot
+  - awesome-typescript-loader
+  - references to Framework and FrameworkComponents we should purge
+  - which means we need some common files in place too.
+
+##### 4/29 AM
+  - Past that. turns out modules must belong to tbTest for this bit.
+  - also note weird issue where npm link references go away sometimes 
+after another npm install
+    
+Currently, gets as far as needing files from common...
+
+##### 4/29 6:36 am
+__WhooHoo!__ build completes without errors.
+Let's check it out...
+- [X] tbx run fails
+    - this turned out to be a missing path (.) because, just like build, it is now needed.
+- [X] Electron runs and pop up error display `AppGateway is not a constructor`
+      - missing parts of injection
+- [X] Preload not found
+    - move to desktop module
+- [X] A series of unfortunate events, a complaint about 'window'
+- [X] Fails to load main page
+
+___7:39___<br/>
+Okay, so we get it to 'run' and it's now loading the page, but
+nothing is displaying.
+Need to break it down and see where it goes sideways.
+
+- looks like none of the framework components are getting registered
+- testcomp appears to be, and it works great, even doing it's autobinding.
+
+-- __Okay__: Everything seems to work nominally now that we got
+the registration figured out. YES! (__8:39 am)
+
+------------------
+##### 4/29 moving ahead
+- √ Let's revisit tbx run and the build-detect and build feature.
+
+__At this point (10:16 am)__: Export to Nativescript doesn't run. No suprise. That's the next frontier.
+
+-----------------
+
 
 -------------
+### GENERAL ASIDES
+- __Aliases__: Not portable, and since we're truly importing our modules, let's change
+them all to absolute module references.  
+  These seem to mostly be found in legacy _.riot_ files.
 
+- __Logging__: How did this become such a bane? Anyway, fix any conflict issues
+  and streamline setup to include a config (from assets?). Config should acknowledge
+- __Revisit Template__: Don't forget you have the tbns-template project and this hosts the
+default files for our setup.  Make sure we have all we need here. Include
+  stubs if appropriate.
+  
+- __Revisit init__: this should be the desktop equivalent of node init or nativescript create.
+It should prompt us and set up our package.json, tsconfig, Readme.md, and stub files
+  (assets/MenuDef.txt, components, pages, scss, Log config/setup, tbAppBack, tbAppFront (or as named)).
+  
+- __Nativescript component library__: before, we ran into a weird problem
+in that we couldn't create a component library as a node module becuase
+  of the automagical platform type module load.  We forthe result at runtimeced all to load the android version.
+  This allowed a build, but I bet  would fail on ios.
+  <br/>
+  We may have to deal with this again.
+  - We can mske s {N} Plugin instead of a node module.  
+  - We could make our own automagical loader that loads both under
+    separate names and then maps the winner at runtime to a common
+    identifier.
 
-
+```
+    "@riotjs/webpack-loader": "^5.0.0",
+    "ansi-colors": "^4.1.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "base-64": "^1.0.0",
+    "electron": "^12.0.5",
+    "fs-extra": "^9.1.0",
+    "gen-format": "file:../gen-format",
+    "node-typescript-compiler": "^2.2.1",
+    "riot": "^5.3.1",
+    "sass": "^1.32.8",
+    "sourcemap-codec": "^1.4.8",
+    "tns-platform-declarations": "^6.5.15",
+    "tslib": "^2.1.0",
+    "typescript": "^3.9.9",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.24.4",
+    "xml-js": "^1.6.11"
+```

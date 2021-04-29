@@ -15,6 +15,6 @@ export function pageStart(app:any) {
     }, 2000)
 }
 
-export function onClick(arg) {
+export function onClick(arg:any) {
     console.log('click from component', arg)
 }
