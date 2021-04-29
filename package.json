@@ -6,6 +6,9 @@
   "backMain": "src/tbAppBack.ts",
   "frontMain": "src/tbAppFront.ts",
   "dependencies": {
+    "thunderbolt-common": "/Users/sohmert/.npm-global/lib/node_modules/thunderbolt-common",
+    "thunderbolt-desktop": "/Users/sohmert/.npm-global/lib/node_modules/thunderbolt-desktop",
+    "thunderbolt-cli": "/Users/sohmert/.npm-global/lib/node_modules/thunderbolt-cli",
     "@riotjs/webpack-loader": "^5.0.0",
     "awesome-typescript-loader": "^5.2.1",
     "riot": "^5.3.3",

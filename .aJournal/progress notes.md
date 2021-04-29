@@ -173,7 +173,67 @@ the registration figured out. YES! (__8:39 am)
 __At this point (10:16 am)__: Export to Nativescript doesn't run. No suprise. That's the next frontier.
 
 -----------------
+- needed to install thunderbolt-common and thunderbolt-mobule in ns project.
+  - need to add to package template
+- appBack needs reference to desktop changed to mobile on migration
 
+- Known warning: Alias to Assets and Generated obviously don't work.
+- components and pages reference thunderbolt-framework/mobile --> should be thunderbolt-mobile
+- Are we importing {Application} from nscore? If so, nscore is undefined.
+- revisit injection.
+- let's start there and kill 2 birds with 1 stone:
+  - move registerApp to platform target
+    - working for desktop
+    - [ ] desktop/mobile import migration
+      - didn't work
+    - [ ] also component/pages migration 
+    - [ ] export componentsExport from mobile
+  
+------
+###### Post-export manual fixes
+```
+npm uninstall thunderbolt-framework
+npm link ../../thunderbolt-mobile
+npm link ../../thunderbolt-common
+```  
+- replace 'desktop' with mobile in app/tbAppBack.ts
+
+the appBack migration is frustratingly stubborn.  WTF?
+
+dropping the links is a big deal. let's revisit the template
+to try to fix some of this by making a file reference to the global.
+
+- Okay.  those annoyances are fixed. 
+- But it fails at launch/main.
+--------------
+###### Okay. end of day 4/29 (long day)
+
+My quarry still eludes me.
+
+Chipped away at it all with good progress, and I think the break-up
+was a good thing.
+
+Problem now is componentExports aren't coming through.
+
+This doesn't look like a typo-related problem like the other bad
+imports.  I think this one may be a failure to build or export 
+files that depend upon the automagical nature of {N}.
+
+Do a test with pure Npm: import componentExports and see what you 
+see.  If that is positive, try a similar test with a vanilla NS app and see
+if we can get actual instances.  I'm betting one of these will fail.
+
+Which I think means we have to move the code into place at the target and build
+it there.
+
+If we have to do that, we should also find a way to limit it to components 
+that are referenced (in pages and components)
+
+
+Fun times.
+
+
+  
 
 -------------
 ### GENERAL ASIDES

@@ -1,11 +1,8 @@
 
-import {startupInjection} from 'thunderbolt-desktop'
-import {injectDesktopDependencies, registerApp, TBBackApp, FrameworkBackContext} from "thunderbolt-common"
+import {targetPlatform} from 'thunderbolt-desktop'
+import {registerApp, TBBackApp, FrameworkBackContext} from "thunderbolt-common"
 
 // import * as MyBack from './backExtensions/testExtension'
-
-injectDesktopDependencies(startupInjection)
-
 class TBTestApp implements TBBackApp {
 
     appStart(context: FrameworkBackContext): Promise<void> {
@@ -23,5 +20,5 @@ class TBTestApp implements TBBackApp {
 }
 
 const ourApp = new TBTestApp()
-registerApp(ourApp)
+registerApp(targetPlatform, ourApp)
 
