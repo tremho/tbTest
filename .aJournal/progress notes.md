@@ -232,6 +232,37 @@ that are referenced (in pages and components)
 
 Fun times.
 
+##### 4/30
+Okay. so maybe it is typo-related.
+- tb-components must be .ts not .js
+- TBPage / TBContent were never included in export
+
+So that's been addressed. We'll try again.
+- TBPage needs getTheApp access somehow
+
+- Got to Simple Label.
+- Okay! Problem with SimpleLabel was use of require() vs. import for a class.
+
+##### 4/30 9:33am  -- First Light Across the universe
+__Yay! It's working!__ Sort of. 
+
+Problems exist: 
+- √ click doesn't go to next page.
+   - __Solved__: Problem was lack of handoff for getTheApp in ComponentBase.
+   - √ ___New Problem___: Next page fails
+  because `TestComp` isn't migrated (works to fix manually) 
+- √ back icon appears on main page
+  - appears to be inverted logic, because it's not on next page
+- √ menu logs but of course doesn't open because of app access commented out.
+
+------
+##### 5/1 1:30 pm Saving progress with remaining issues:
+- binding updates not working
+- test component not appearing
+- stack layout test fails
+- fileApi needs to be implemented
+- menu icon not appearing
+- menu options tests not working
 
   
 

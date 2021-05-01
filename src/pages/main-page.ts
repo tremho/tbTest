@@ -39,7 +39,7 @@ export function pageStart(app:any) {
 }
 
 export function onClick(ed:any) {
-    // Log.info('We got clicked! ')
+    Log.info('We got clicked! ')
     // Log.crash('this is a crash log')
     ed.app.navigateToPage('next')
 }
