@@ -257,12 +257,31 @@ Problems exist:
 
 ------
 ##### 5/1 1:30 pm Saving progress with remaining issues:
-- binding updates not working
-- test component not appearing
+- √ binding updates not working
+   - √ Proper injection of ComCommon fixed this
+  
+- ◊ test component not appearing
+  - √ problem 1: Not setting initial text
+  - problem 2: Not calling beforeLayout to form auto-bind
+      - √ Now it is called, but local binds weren't set
+      - √ Local binds are set
+    
+  - issue 3: No style is applied
+    - ◊ come back to this
+  
+  - click fails because the `handleAction` code is riot-specific
+  and refers to `this.props.action` directly should use `getComponentAttribute`
+    
+  - we should have a tagname prop that is portable
+  
+q
 - stack layout test fails
 - fileApi needs to be implemented
 - menu icon not appearing
 - menu options tests not working
+- tools and indicators need to be implemented
+
+- ~20 round-trips of next/back will hang
 
   
 
