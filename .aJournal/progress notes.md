@@ -271,10 +271,11 @@ Problems exist:
   
   - click fails because the `handleAction` code is riot-specific
   and refers to `this.props.action` directly should use `getComponentAttribute`
+    - Okay, but now it has problem with 'this' in handle action
     
   - we should have a tagname prop that is portable
   
-q
+
 - stack layout test fails
 - fileApi needs to be implemented
 - menu icon not appearing
