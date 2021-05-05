@@ -1,8 +1,8 @@
 <stack-test-page>
 <action-bar text="Stack Layout Test" menu-id="main" />
 <simple-label text="The page-id is {b('navInfo.pageId')}"/>
-<!-- <simple-slot>The type is $navInfo.context.type</simple-slot> xxxx-->
-<div if="{isVertical(this)}">
+<!-- <simple-slot>The type is $navInfo.context.type</simple-slot> -->
+<cond-sect if="{isVertical(this)}">
     <simple-label text="Test of vertical stack layout"/>
     <fill-space height="2rem"/>
     <stack-layout>
@@ -12,8 +12,8 @@
         <simple-label text="a"/>
         <simple-label text="Stack"/>
     </stack-layout>
-</div>
-<div if="{isHorizontal(this)}">
+</cond-sect>
+<cond-sect if="{isHorizontal(this)}">
     <simple-label text="Test of horizontal stack layout"/>
     <stack-layout orientation="horizontal">
         <simple-label text="Hello"/>
@@ -22,8 +22,8 @@
         <simple-label text="a"/>
         <simple-label text="Stack"/>
     </stack-layout>
-</div>
-<div if="{isVerticalSpaced(this)}">
+</cond-sect>
+<cond-sect if="{isVerticalSpaced(this)}">
     <simple-label text="Test of vertical stack layout with independent alignments"/>
     <stack-layout orientation="vertical">
         <simple-label text="Hello" align-text="left"/>
@@ -32,8 +32,8 @@
         <simple-label text="a" align-text="center"/>
         <simple-label text="Stack" align-text="center"/>
     </stack-layout>
-</div>
-<div if="{isHorizontalSpaced(this)}">
+</cond-sect>
+<cond-sect if="{isHorizontalSpaced(this)}">
     <simple-label text="Test of horizontal stack layout with independent alignments"/>
     <stack-layout orientation="horizontal">
         <simple-label text="Hello" height="2rem"/>
@@ -42,7 +42,7 @@
         <simple-label text="a" align-text="center"/>
         <simple-label text="Stack" align-text="center"/>
     </stack-layout>
-</div>
+</cond-sect>
 
     <script>
       import pageComp from 'Framework/app-core/PageComp'

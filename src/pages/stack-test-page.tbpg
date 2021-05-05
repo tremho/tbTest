@@ -4,9 +4,9 @@ menu-id="main"
 
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
-    <!-- <simple-slot>The type is $navInfo.context.type</simple-slot> xxxx-->
+    <!-- <simple-slot>The type is $navInfo.context.type</simple-slot> -->
 
-    <div if="$isVertical()">
+    <cond-sect if="$isVertical()">
     <simple-label text="Test of vertical stack layout"/>
 
         <fill-space height="2rem"/>
@@ -17,9 +17,9 @@ menu-id="main"
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
-    </div>
+    </cond-sect>
 
-    <div if="$isHorizontal()">
+    <cond-sect if="$isHorizontal()">
         <simple-label text="Test of horizontal stack layout"/>
         <stack-layout orientation="horizontal">
             <simple-label text="Hello"/>
@@ -28,8 +28,8 @@ menu-id="main"
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
-    </div>
-    <div if="$isVerticalSpaced()">
+    </cond-sect>
+    <cond-sect if="$isVerticalSpaced()">
         <simple-label text="Test of vertical stack layout with independent alignments"/>
         <stack-layout orientation="vertical">
             <simple-label text="Hello" align-text="left"/>
@@ -38,8 +38,8 @@ menu-id="main"
             <simple-label text="a" align-text="center"/>
             <simple-label text="Stack" align-text="center"/>
         </stack-layout>
-    </div>
-    <div if="$isHorizontalSpaced()">
+    </cond-sect>
+    <cond-sect if="$isHorizontalSpaced()">
         <simple-label text="Test of horizontal stack layout with independent alignments"/>
         <stack-layout orientation="horizontal">
             <simple-label text="Hello" height="2rem"/>
@@ -48,7 +48,7 @@ menu-id="main"
             <simple-label text="a" align-text="center"/>
             <simple-label text="Stack" align-text="center"/>
         </stack-layout>
-    </div>
+    </cond-sect>
 
 $isVertical() { return this.bound.navInfo.context.type === 'vertical'}
 $isHorizontal() { return this.bound.navInfo.context.type === 'horizontal'}

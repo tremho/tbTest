@@ -271,12 +271,38 @@ Problems exist:
   
   - click fails because the `handleAction` code is riot-specific
   and refers to `this.props.action` directly should use `getComponentAttribute`
-    - Okay, but now it has problem with 'this' in handle action
+    - √ Okay, but now it has problem with 'this' in handle action
+    - √ Last but not least, wrong arguments were passed.
     
   - we should have a tagname prop that is portable
   
 
 - stack layout test fails
+  - √ Reference to Div() replaced with new `<section>` component
+    - ◊ Works Desktop, but no sections appear mobile 
+      - Apparently, I never implemented conditional display
+      - ◊ But then everything should appear at once, right?
+  
+---
+  This  has revealed the following:
+
+- ◊ `<section>` should become `<cond-sect>` and implement `if` property
+on mobile to basically make it inverse setting for `hidden`
+- ◊ We need to pick up the page conditional methods and access them
+from the section.
+- ◊ We also need to do bindings like we do for components here on the page.
+Are we using PageComp? Shouldn't this be implemented at the TBContent level?
+  
+
+- ◊ simple-label isn't working in here, but regular label does. ??
+  - √ Turns out setting props must be behind a timeout
+  
+- ◊ build the setControlProps method into ComponentBase and controls.
+
+
+  
+  
+
 - fileApi needs to be implemented
 - menu icon not appearing
 - menu options tests not working
