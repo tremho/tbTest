@@ -43,7 +43,7 @@ let appPath:string
 let binaryDataRead:any
 
 function testExists() {
-    const existingFile = app.Path.join(appPath, 'build', 'tbAppBack.js')
+    const existingFile = app.isMobile ? app.Path.join(appPath, 'tbAppBack.ts') : app.Path.join(appPath, 'build', 'tbAppBack.js')
     api.fileExists(existingFile).then((exists:boolean) => {
         app.setPageData(page, 'exist1', (exists ?'Passed' : "Failed to find existing file at "+existingFile))
         try {
@@ -57,7 +57,12 @@ function testExists() {
 }
 
 function testReadText() {
-    const textFile = '/Users/sohmert/file_in_user_space.txt'
+    let textFile:string
+    if(app.isMobile()) {
+        textFile = app.Path.join(appPath, 'app-root.xml')
+    } else {
+        textFile = '/Users/sohmert/file_in_user_space.txt'
+    }
     api.readFileText(textFile).then((text:string) => {
         const success = (text.length > 0)
         app.setPageData(page, 'readText', text)
@@ -72,7 +77,12 @@ function testReadText() {
     }
 }
 function testWriteText() {
-    const textFile = '/Users/sohmert/textOut.txt'
+    let textFile:string
+    if(app.isMobile()) {
+        textFile = app.Path.join(appPath, 'textOut.txt')
+    } else {
+        textFile = '/Users/sohmert/textOut.txt'
+    }
     const contents = 'This is a test of writing text to a file'
     return api.writeFileText(textFile, contents).then(() => {
         app.setPageData(page, 'writeText', 'wrote to '+textFile)
@@ -84,7 +94,12 @@ function testWriteText() {
 }
 
 function testReadBinary() {
-    const binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
+    let binFile:string
+    if(app.isMobile()) {
+        binFile = app.Path.join(appPath, 'pages', 'logtest.ts')
+    } else {
+        binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
+    }
     return api.readFileArrayBuffer(binFile).then((ab:ArrayBuffer) => {
         const dv = new DataView(ab)
 
@@ -93,7 +108,12 @@ function testReadBinary() {
     })
 }
 function testWriteBinary() {
-    const binFile = '/Users/sohmert/copy.png'
+    let binFile:string
+    if(app.isMobile()) {
+        binFile = app.Path.join(appPath, 'copy.txt')
+    } else {
+        binFile = '/Users/sohmert/copy.png'
+    }
     return api.writeFileArrayBuffer(binFile,binaryDataRead).then(() => {
         app.setPageData(page, 'writeBinary', 'copied image to '+binFile)
     })
@@ -101,45 +121,79 @@ function testWriteBinary() {
 }
 
 function testDelete() {
-    const textFile = '/Users/sohmert/textOut.txt'
+    let textFile:string
+    if(app.isMobile()) {
+        textFile = app.Path.join(appPath, 'textOut.txt')
+    } else {
+        textFile = '/Users/sohmert/textOut.txt'
+    }
     return api.fileDelete(textFile).then(() => {
         app.setPageData(page, 'delete', 'deleted file '+textFile)
     })
 
 }
 function testRename() {
-    return api.fileRename('/Users/sohmert/copy.png', 'copiedImage.png').then(() => {
+    let copyFile:string
+    if(app.isMobile()) {
+        copyFile = app.Path.join(appPath, 'copy.txt')
+    } else {
+        copyFile = '/Users/sohmert/copy.png'
+    }
+    return api.fileRename(copyFile, 'copiedImage.png').then(() => {
         app.setPageData(page, 'rename', 'renamed to copiedImage.png')
     })
 }
 function testMove() {
-    return api.fileMove('/Users/sohmert/copiedImage.png', '/Users/sohmert/tbd/copiedImage.png').then(() => {
-        app.setPageData(page, 'move', 'moved to tbd/copiedImage.png')
+    let source:string, dest:string
+    if(app.isMobile()) {
+        source = app.Path.join(appPath, 'copiedImage.png')
+        dest = app.Path.join(appPath, 'pages', 'copiedImage.png')
+    } else {
+        source = '/Users/sohmert/copiedImage.png'
+        dest = '/Users/sohmert/tbd/copiedImage.png'
+    }
+    return api.fileMove(source, dest).then(() => {
+        app.setPageData(page, 'move', 'moved to '+dest)
     })
 
 }
 function testCopy() {
-    const binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
+    let binFile:string
+    let dest:string
+    if(app.isMobile()) {
+        binFile = app.Path.join(appPath, 'assets', 'menuDef.txt')
+        dest = app.Path.join(appPath, 'duplicatedImage.png')
+    } else {
+        binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
+        dest = '/Users/sohmert/tbd/duplicatedImage.png'
+    }
 
-    return api.fileCopy(binFile, '/Users/sohmert/tbd/duplicatedImage.png').then(() => {
-        app.setPageData(page, 'copy', 'copied to tbd/duplicatedImage.png')
+    return api.fileCopy(binFile, dest).then(() => {
+        app.setPageData(page, 'copy', 'copied to '+dest)
     })
 
 }
 function testFstat() {
-    const binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
-
+    let binFile: string
+    if (app.isMobile()) {
+        binFile = app.Path.join(appPath, 'assets', 'menuDef.txt')
+    } else {
+        binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
+    }
     return api.fileStats(binFile).then((info:object) => {
         const data = app.getPageData(page)
         data.stats = JSON.stringify(info)
         console.log(data)
         app.setPageData(page, data)
     })
-
-
 }
 function testMkdir() {
-    const testDir = '/Users/sohmert/testFolder/with/several/nested/subfolders'
+    let testDir:string
+    if(app.isMobile()) {
+        testDir = app.Path.join(appPath, 'testFolder/with/several/different/subfolders')
+    } else {
+        testDir = '/Users/sohmert/testFolder/with/several/nested/subfolders'
+    }
     return api.createFolder(testDir).then(() => {
         app.setPageData(page, 'mkdir', testDir)
         return api.fileExists(testDir).then((exists:boolean) => {
@@ -153,7 +207,13 @@ function testMkdir() {
 
 }
 function testRmDir() {
-    const testDir = '/Users/sohmert/testFolder'
+    let testDir:string
+    if(app.isMobile()) {
+        testDir = app.Path.join(appPath, 'testFolder')
+    } else {
+        testDir = '/Users/sohmert/testFolder'
+    }
+
     return api.removeFolder(testDir, true).then(() => {
         app.setPageData(page, 'rmdir', 'testFolder removed (-fr)')
         const f = app.Path.join(testDir, 'test')
@@ -164,11 +224,11 @@ function testRmDir() {
     })
 }
 function testReadDirectory() {
-    const testDir = '/Users/sohmert/testFolder/with/several/nested/subfolders'
-    let out = ''
+    let testDir:string = app.Path.home
+    let out = '\nFiles in  folder '+testDir+':\n'
     return api.readFolder(testDir).then((entries:any[]) => {
         entries.forEach(entry => {
-            out = out + `${entry.fileName} (${entry.info.mode}, ${entry.info.size} bytes}<br/>`
+            out = out + `${entry.fileName} (${entry.type}, ${entry.size} bytes), `
         })
         app.setPageData(page, 'readFolder', out)
     })
