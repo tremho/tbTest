@@ -24,17 +24,22 @@ export function pageStart(appContext:any, context:any) {
                                         testReadDirectory().then(() => {
                                             testRmDir().then(() => {
                                                 console.log('done with file tests')
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    })
+                                                app.updatePage(page)
+                                            }).catch((e:Error)=>{ handleCatch(e) })
+                                        }).catch((e:Error)=>{ handleCatch(e) })
+                                    }).catch((e:Error)=>{ handleCatch(e) })
+                                }).catch((e:Error)=>{ handleCatch(e) })
+                            }).catch((e:Error)=>{ handleCatch(e) })
+                        }).catch((e:Error)=>{ handleCatch(e) })
+                    }).catch((e:Error)=>{ handleCatch(e) })
+                }).catch((e:Error)=>{ handleCatch(e) })
+            }).catch((e:Error)=>{ handleCatch(e) })
+        }).catch((e:Error)=>{ handleCatch(e) })
+    }).catch((e:Error)=>{ handleCatch(e) })
+    function handleCatch(e:Error) {
+        console.log(e)
+        app.updatePage(page)
+    }
 }
 let app:any
 let api:any, page:any
