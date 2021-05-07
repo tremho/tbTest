@@ -25,6 +25,8 @@ export function pageStart(appContext:any, context:any) {
                                             testRmDir().then(() => {
                                                 console.log('done with file tests')
                                                 app.updatePage(page)
+                                                const data = app.getPageData(page)
+                                                console.log(JSON.stringify(data, null,2))
                                             }).catch((e:Error)=>{ handleCatch(e) })
                                         }).catch((e:Error)=>{ handleCatch(e) })
                                     }).catch((e:Error)=>{ handleCatch(e) })
@@ -48,7 +50,7 @@ let appPath:string
 let binaryDataRead:any
 
 function testExists() {
-    const existingFile = app.isMobile ? app.Path.join(appPath, 'tbAppBack.ts') : app.Path.join(appPath, 'build', 'tbAppBack.js')
+    const existingFile = app.isMobile ? app.Path.join(appPath, 'app', 'package.json') : app.Path.join(appPath, 'build', 'tbAppBack.js')
     api.fileExists(existingFile).then((exists:boolean) => {
         app.setPageData(page, 'exist1', (exists ?'Passed' : "Failed to find existing file at "+existingFile))
         try {
@@ -64,7 +66,7 @@ function testExists() {
 function testReadText() {
     let textFile:string
     if(app.isMobile()) {
-        textFile = app.Path.join(appPath, 'app-root.xml')
+        textFile = app.Path.join(appPath, 'app', 'package.json')
     } else {
         textFile = '/Users/sohmert/file_in_user_space.txt'
     }
@@ -101,7 +103,7 @@ function testWriteText() {
 function testReadBinary() {
     let binFile:string
     if(app.isMobile()) {
-        binFile = app.Path.join(appPath, 'pages', 'logtest.ts')
+        binFile = app.Path.join(appPath, 'metadata', 'treeValueStream.dat')
     } else {
         binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
     }
@@ -115,7 +117,7 @@ function testReadBinary() {
 function testWriteBinary() {
     let binFile:string
     if(app.isMobile()) {
-        binFile = app.Path.join(appPath, 'copy.txt')
+        binFile = app.Path.join(appPath, 'copy.dat')
     } else {
         binFile = '/Users/sohmert/copy.png'
     }
@@ -140,7 +142,7 @@ function testDelete() {
 function testRename() {
     let copyFile:string
     if(app.isMobile()) {
-        copyFile = app.Path.join(appPath, 'copy.txt')
+        copyFile = app.Path.join(appPath, 'copy.dat')
     } else {
         copyFile = '/Users/sohmert/copy.png'
     }
@@ -152,7 +154,7 @@ function testMove() {
     let source:string, dest:string
     if(app.isMobile()) {
         source = app.Path.join(appPath, 'copiedImage.png')
-        dest = app.Path.join(appPath, 'pages', 'copiedImage.png')
+        dest = app.Path.join(appPath, 'app', 'assets', 'copiedImage.png')
     } else {
         source = '/Users/sohmert/copiedImage.png'
         dest = '/Users/sohmert/tbd/copiedImage.png'
@@ -166,7 +168,7 @@ function testCopy() {
     let binFile:string
     let dest:string
     if(app.isMobile()) {
-        binFile = app.Path.join(appPath, 'assets', 'menuDef.txt')
+        binFile = app.Path.join(appPath, 'app', 'assets', 'copiedImage.png')
         dest = app.Path.join(appPath, 'duplicatedImage.png')
     } else {
         binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
@@ -181,7 +183,7 @@ function testCopy() {
 function testFstat() {
     let binFile: string
     if (app.isMobile()) {
-        binFile = app.Path.join(appPath, 'assets', 'menuDef.txt')
+        binFile = app.Path.join(appPath, 'app', 'assets', 'menuDef.txt')
     } else {
         binFile = '/Users/sohmert/tbd/thunderbolt-framework/.aJournal/structure.png'
     }
