@@ -299,18 +299,15 @@ Are we using PageComp? Shouldn't this be implemented at the TBContent level?
   
 - ◊ build the setControlProps method into ComponentBase and controls.
 
+----------
+- √ fileApi needs to be implemented
+- ◊ tools and indicators need to be implemented
+- ◊ menu icon not appearing
+- ◊ menu options tests not working (either side -- not implemented)
 
-  
-  
+- ◊◊  ~20 round-trips of next/back will hangß
+  - Not seeing this anymore
 
-- fileApi needs to be implemented
-- menu icon not appearing
-- menu options tests not working
-- tools and indicators need to be implemented
-
-- ~20 round-trips of next/back will hang
-
-  
 
 -------------
 ### GENERAL ASIDES
