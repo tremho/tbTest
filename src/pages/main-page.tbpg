@@ -8,7 +8,7 @@ toolbar-id="main"
 indicators-id="main"
 
 #content
-    <simple-label bind="testValues.mainLabel as text" text="Hello"/>
+    <simple-label bind="testValues.mainLabel as text" text="Hello" class="myTest"/>
     <simple-button text="Go to Next Page" action="onClick"/>
     <simple-button text="Toggle Indicator" action="onIndTest"/>
 

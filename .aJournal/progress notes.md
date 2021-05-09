@@ -305,18 +305,85 @@ Are we using PageComp? Shouldn't this be implemented at the TBContent level?
 - ◊ menu icon not appearing
 - ◊ menu options tests not working (either side -- not implemented)
 
-- ◊◊  ~20 round-trips of next/back will hangß
+- ◊◊  ~20 round-trips of next/back will hang
   - Not seeing this anymore
 
+- ◊ SCSS support needed
+  - √ did direct proof of concept
+  - √ need to update template for app.scss and package.json changes
+      - nothing really to do for template
+  - ◊ ComponentWriterNS needs to export a like-named scss file by copying
+    the scss code from the <style> block.
+  - √ NS export needs to append app.scss with imports, by doing a
+  recursive sweep of `src` for *.scss 
+  - √ app.scss currently is the primary for desktop.
+  √ This is defined by the build proc. What we should do instead
+  is generate app.scss outside of the scss folder with imports of
+  everything within.
+  
+  - ◊ We can take a page from {N} here and use prefixes like .desktop.scss
+  and .mobile.scss and separate accordingly. mobile styles 
+  can apply the .ns-ios and .ns-android class def
+  notation if they like for mobile platform differentiation.
+    - ◊ but to do that we need to copy all the mobile scss files over
+  and let nativescript sort it out.
+      
+----
+##### 5/9  - SCSS support
+Implemented a scheme similar to what is named above to collect
+scss imports and build app.scss on desktop. seems to work well.
+
+Export of NS Component is also working well.
+
+- ◊ Path problem exists in ExportNS attemt to gather and make
+an app.scss there.  components folder.
+  
+Done for today.
+ 
+----
+
+Apply and support the following global class hierarchy:  
+  - (desktop): body class="theme desktop macos|windows|linux"
+  - (mobile) : page class="theme mobile" 
+    (ns-ios | ns-android supported by {N})
+    
+
+- ◊ indicators
+  
+- ◊ Back Extensions should be supported and test re-instated
+
+--------
+###### In other news...
+was able to run under ios for the first time (finally) and got this crash:
+```
+CONSOLE LOG: starting app...
+***** Fatal JavaScript exception - application has been terminated. *****
+NativeScript encountered a fatal error: Uncaught TypeError: Cannot read property 'messageInit' of undefined
+at
+setupUIElements(file: app/webpack:/tbns-template/thunderbolt-common/build/app-core/AppCore.js:146:20)
+at onLoaded(file: app/webpack:/tbns-template/app/launch/main.ts:17:12)
+```
+---------
+
+- ◊ Logging
+- ◊ Component Library
+- ◊ C and Java support
+- ◊ System indicators
+
+- ◊ Set up Windows and Linux VMs
+- ◊ publishing support
 
 -------------
 ### GENERAL ASIDES
 - __Aliases__: Not portable, and since we're truly importing our modules, let's change
 them all to absolute module references.  
   These seem to mostly be found in legacy _.riot_ files.
+  - the .riot ones don't matter because we properly alias in webpack
+  - problem is with Generated and Assets mobile-side
 
 - __Logging__: How did this become such a bane? Anyway, fix any conflict issues
   and streamline setup to include a config (from assets?). Config should acknowledge
+
 - __Revisit Template__: Don't forget you have the tbns-template project and this hosts the
 default files for our setup.  Make sure we have all we need here. Include
   stubs if appropriate.
@@ -326,32 +393,13 @@ It should prompt us and set up our package.json, tsconfig, Readme.md, and stub f
   (assets/MenuDef.txt, components, pages, scss, Log config/setup, tbAppBack, tbAppFront (or as named)).
   
 - __Nativescript component library__: before, we ran into a weird problem
-in that we couldn't create a component library as a node module becuase
-  of the automagical platform type module load.  We forthe result at runtimeced all to load the android version.
-  This allowed a build, but I bet  would fail on ios.
+in that we couldn't create a component library as a node module because
+  of the automagical platform type module load.  We forced result at runtime all to load the android version.
+  This allowed a build, but it would fail on ios.
   <br/>
   We may have to deal with this again.
-  - We can mske s {N} Plugin instead of a node module.  
-  - We could make our own automagical loader that loads both under
+  - <del>We can make a {N} Plugin instead of a node module.</del>  
+  - ◊ We could make our own automagical loader that loads both under
     separate names and then maps the winner at runtime to a common
     identifier.
 
-```
-    "@riotjs/webpack-loader": "^5.0.0",
-    "ansi-colors": "^4.1.1",
-    "awesome-typescript-loader": "^5.2.1",
-    "base-64": "^1.0.0",
-    "electron": "^12.0.5",
-    "fs-extra": "^9.1.0",
-    "gen-format": "file:../gen-format",
-    "node-typescript-compiler": "^2.2.1",
-    "riot": "^5.3.1",
-    "sass": "^1.32.8",
-    "sourcemap-codec": "^1.4.8",
-    "tns-platform-declarations": "^6.5.15",
-    "tslib": "^2.1.0",
-    "typescript": "^3.9.9",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^5.24.4",
-    "xml-js": "^1.6.11"
-```
