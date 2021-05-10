@@ -335,10 +335,27 @@ scss imports and build app.scss on desktop. seems to work well.
 
 Export of NS Component is also working well.
 
-- ◊ Path problem exists in ExportNS attemt to gather and make
+- ◊ Path problem exists in ExportNS attempt to gather and make
 an app.scss there.  components folder.
   
 Done for today.
+
+----
+Goals for tomorrow:
+ - finish what we started for scss
+ - get ios working
+ - test ios/android/shared scss platform stuff
+ - implement `[data-state='whatever']` support for NS in some fashion
+
+need to think about styling 
+- same for all targets
+- different per target
+- will need to test on other desktop platforms too, but save that for
+when we tackle publishing.
+  
+
+
+ 
  
 ----
 
