@@ -342,7 +342,7 @@ Done for today.
 
 ----
 Goals for tomorrow:
- - finish what we started for scss
+ - √  finish what we started for scss
  - get ios working
  - test ios/android/shared scss platform stuff
  - implement `[data-state='whatever']` support for NS in some fashion
@@ -352,12 +352,28 @@ need to think about styling
 - different per target
 - will need to test on other desktop platforms too, but save that for
 when we tackle publishing.
-  
 
-
- 
- 
 ----
+##### 5/10 get ios working
+This is going to be a rabbit-hole dive in itself, so here we go
+
+- First things: 
+  - original crash was due to inconsistencies in the 
+Nativescript global object, so the revised code is a total punt
+that basically detects node because @nativescript/core was imported.
+Not great, but since {N} can't keep to their own specifications, 
+what else can we do?
+    - Back button was not appearing.  Turns out to be the setting of text after timeout issue.
+      - ◊ reminder to build that into component methods properly.
+ 
+- √ Toolbars not appearing on ios 
+    - Problems with initial sizing so different on iOS. Works now. Tested both.
+  
+- ◊ Overall scale is tiny.  Should probably leave this bit for later as part of platform SCSS stuff.
+
+- ◊ General running on iOS not tested / appears flakey.  Please test.
+
+-----------
 
 Apply and support the following global class hierarchy:  
   - (desktop): body class="theme desktop macos|windows|linux"
@@ -369,18 +385,8 @@ Apply and support the following global class hierarchy:
   
 - ◊ Back Extensions should be supported and test re-instated
 
+-------
 --------
-###### In other news...
-was able to run under ios for the first time (finally) and got this crash:
-```
-CONSOLE LOG: starting app...
-***** Fatal JavaScript exception - application has been terminated. *****
-NativeScript encountered a fatal error: Uncaught TypeError: Cannot read property 'messageInit' of undefined
-at
-setupUIElements(file: app/webpack:/tbns-template/thunderbolt-common/build/app-core/AppCore.js:146:20)
-at onLoaded(file: app/webpack:/tbns-template/app/launch/main.ts:17:12)
-```
----------
 
 - ◊ Logging
 - ◊ Component Library
