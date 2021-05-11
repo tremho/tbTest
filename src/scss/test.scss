@@ -1,3 +1,21 @@
 .myTest {
   color: deepskyblue;
 }
+
+.tool-state-default {
+  background-color: yellowgreen;
+}
+.tool-state-off{
+  background-color: darkgray;
+}
+.tool-state-on {
+  background-color: red;
+}
+.myclassyclassclass {
+  :not(.tool-state-on,.tool-state-off) {
+    background-color: black;
+  }
+  color:white;
+  font-size: larger;
+  font-weight: bold;
+}

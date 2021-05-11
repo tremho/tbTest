@@ -50,14 +50,19 @@ export function onIndTest(ed:any) {
         num: 42
     }
     Log.warn('toggle indicator', obj)
-    let current = ed.app.model.getAtPath('indicator-IN3.state')
+    let current = ed.app.model.getAtPath('indicator-IN3.state') // todo: set/get indicator state
     let next = (current !== 'on') ? 'on' : ''
     ed.app.model.setAtPath('indicator-IN3.state',next,true)
 
     // LogTest()
 }
 export function onToolAction(toolEvent:any) {
-    Log.warn('tool action', toolEvent)
+    Log.warn('tool action', toolEvent.id, toolEvent.eventName, toolEvent.tag)
+    let state = toolEvent.app.getToolState(toolEvent.id)
+    Log.warn('previous tool state is ', state)
+    state = (state === 'on') ? 'off' : 'on'
+    toolEvent.app.setToolState(toolEvent.id, state)
+    Log.warn('current tool state is ', state)
 }
 export function onMenuAction(menuEvent:any) {
     Log.info('main sees a menu action for ',menuEvent.id)

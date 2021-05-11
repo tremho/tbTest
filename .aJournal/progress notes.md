@@ -343,7 +343,7 @@ Done for today.
 ----
 Goals for tomorrow:
  - √  finish what we started for scss
- - get ios working
+ - √ get ios working
  - test ios/android/shared scss platform stuff
  - implement `[data-state='whatever']` support for NS in some fashion
 
