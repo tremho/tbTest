@@ -50,9 +50,9 @@ export function onIndTest(ed:any) {
         num: 42
     }
     Log.warn('toggle indicator', obj)
-    let current = ed.app.model.getAtPath('indicator-IN3.state') // todo: set/get indicator state
-    let next = (current !== 'on') ? 'on' : ''
-    ed.app.model.setAtPath('indicator-IN3.state',next,true)
+    let current = ed.app.getIndicatorState('IN3')
+    let next = (current !== 'on') ? 'on' : 'off'
+    ed.app.setIndicatorState('IN3',next)
 
     // LogTest()
 }

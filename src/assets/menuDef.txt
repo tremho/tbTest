@@ -88,7 +88,7 @@ DEFINE TOOLBAR "main"
 
 DEFINE INDICATORS "main"
 #IN1, A<state=on>
-#IN2, B<class=myclassyclassclass>
+#IN2, B<state=default>
 #IN3, C<type=Example,tooltip=Cooliomente,state=on>
-#IN4, D<state=foobar,icon:foobar=foobar.png>
+#IN4, D<state=off,icon:foobar=foobar.png>
 
