@@ -1,12 +1,16 @@
 
 // import Log from "./Log"
 
+import {ExampleIndicator} from "./toolExtensions/ExampleIndicator"
+
 export function appStart(appContext:any) {
     // Log.info('App Front sees appStart', appContext)
 
     // Log.debug('setup Model')
     const model = appContext.model;
     model.addSection('testValues', {mainLabel: 'Hello, World! This is ThunderBolt!'})
+
+    appContext.registerToolExtension('Example', ExampleIndicator)
 
     appContext.setPageData('file-test-page', {
         // exist1: false,

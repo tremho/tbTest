@@ -381,11 +381,54 @@ Apply and support the following global class hierarchy:
     (ns-ios | ns-android supported by {N})
     
 
-- ◊ indicators
+- √ indicators
+
+- ◊ tool and indicator extensions (remember those?)
   
 - ◊ Back Extensions should be supported and test re-instated
 
 -------
+##### 5/11 A good point for next steps
+Today we got the whole of the menu bar working across all targets, and everything expected to work in the app seems to work well too.
+One of the achievements was to switch to a model closer to the web version for the layout and this proved beneficial because
+the indicator bar was not anchoring to the right like it should until I switched the menu bar to be a gridLayout, which is basically
+what I did for the riot version. 
+
+This should be the design approach overall:
+- design for riot and use the debugger tools to test mobile layouts and responsive design.
+- create the ns components using the closest analogs you can on {N}. As we get more basics in place, this will become
+more automatic with the inheritance.
+  
+There are some caveats to today's good tidings of course:
+
+- File tests on iOS only get as far as the binaryRead test because we don't have a NSData shim in place there and throw
+a warning, which stops everything.  This is "as designed" until we can get a fix.
+
+- Android emulator isn't doing orientation changes correctly.  Look for a solution. May need an update.
+
+##### So, what's next
+- tool and indicator extensions
+  - type property -> createExtensionType: invokes new type from mapped name.  Right now extensionTypes only contains Example => "ExampleIndicator"
+  - extension is an extension of ToolExtension. LC event calls for setToPage, stateChange, press, release. consider interface instead.
+  - √ registerToolExtension(name, module)
+   -- __So Cool. This works.__<br/>
+    - √ but I wonder if we shouldn't send toolInfo instead of component, or both?
+    - ◊ would still be nice to have an interface: Declarations!
+  
+- Back Extensions
+  - registered in appBack with registerExtensionModule(name, module)
+  - called via extApi from front by name and args (w/promise return)
+- target SCSS and emSize
+- `clean` (remove riot files, app.scss, and .gen)  ___OR:___
+  - is is possible to reposition all these files into .gen in the first place?
+    - uh, yeah. we would need to change PageWriterNS to output to .gen/pages instead of pages. 
+    - then register components from .gen/pages instead of pages is all
+    - and index.html would need to change the stylesheet href to ./.gen/app.css and 
+    - the build would need to change compileCSS so it creates it there.
+
+  
+
+- 
 --------
 
 - ◊ Logging

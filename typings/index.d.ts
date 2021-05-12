@@ -3,4 +3,5 @@ declare module "thunderbolt-common" {
     interface TBBackApp {}
     class FrameworkBackContext {}
     function registerApp(targetPlatform:object, backApp:TBBackApp) : void
+    class ToolExtension {}
 }
