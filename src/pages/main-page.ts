@@ -44,15 +44,11 @@ export function onClick(ed:any) {
     ed.app.navigateToPage('next')
 }
 export function onIndTest(ed:any) {
-    const obj = {
-        foo:'foo',
-        bar:'bar',
-        num: 42
-    }
-    Log.warn('toggle indicator', obj)
+    Log.warn('toggle indicator')
     let current = ed.app.getIndicatorState('IN3')
     let next = (current !== 'on') ? 'on' : 'off'
     ed.app.setIndicatorState('IN3',next)
+    Log.debug('indicator IN3 state changed from ', current, 'to', next)
 
     // LogTest()
 }
