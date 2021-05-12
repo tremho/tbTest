@@ -407,13 +407,19 @@ a warning, which stops everything.  This is "as designed" until we can get a fix
 - Android emulator isn't doing orientation changes correctly.  Look for a solution. May need an update.
 
 ##### So, what's next
-- tool and indicator extensions
+- √ tool and indicator extensions
   - type property -> createExtensionType: invokes new type from mapped name.  Right now extensionTypes only contains Example => "ExampleIndicator"
   - extension is an extension of ToolExtension. LC event calls for setToPage, stateChange, press, release. consider interface instead.
   - √ registerToolExtension(name, module)
    -- __So Cool. This works.__<br/>
     - √ but I wonder if we shouldn't send toolInfo instead of component, or both?
     - ◊ would still be nice to have an interface: Declarations!
+  
+---
+###### Just after midnight, 5/12
+I should set up a project and wiki on Github and use that instead of this for these notes.
+[project](https://github.com/tremho/thunderbolt-common/projects/1)
+[wiki](https://github.com/tremho/thunderbolt-common/wiki)
   
 - Back Extensions
   - registered in appBack with registerExtensionModule(name, module)
