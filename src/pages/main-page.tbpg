@@ -11,4 +11,5 @@ indicators-id="main"
     <simple-label bind="testValues.mainLabel as text" text="Hello" class="myTest"/>
     <simple-button text="Go to Next Page" action="onClick"/>
     <simple-button text="Toggle Indicator" action="onIndTest"/>
+    <simple-label text="Who am I?" class="target"/>
 

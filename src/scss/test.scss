@@ -26,3 +26,20 @@
 .indicator-state-off{
   background-color: darkblue;
 }
+
+
+.target {
+  font-size: 1em;
+}
+.ns-android {
+  .target {
+    color: white;
+    background-color: deepskyblue;
+  }
+}
+.ns-ios {
+    .target {
+      color: yellow;
+      background-color: darkblue;
+    }
+}
