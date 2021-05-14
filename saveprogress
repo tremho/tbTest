@@ -3,33 +3,35 @@
 cmt=$1
 
 echo "\e[1;32mUpdates in Desktop\e[0m"
+echo "--------------------"
 cd ../thunderbolt-desktop
 pwd
 git commit -am "${cmt}"
 git push
 sleep 1
 echo "\e[1;31mUpdates in Common\e[0m"
-echo "Updates in Common"
+echo "--------------------"
 cd ../thunderbolt-common
 pwd
 git commit -am "${cmt}"
 git push
 sleep 1
 echo "\e[1;34mUpdates in Mobile\e[0m"
-echo "Updates in Mobile"
+echo "--------------------"
 sleep 1
 cd ../thunderbolt-mobile
 pwd
 git commit -am "${cmt}"
 git push
 echo "\e[1;35mUpdates in the CLI\e[0m"
-echo "Updates in the CLI"
+echo "--------------------"
 cd ../thunderbolt-cli
 pwd
 git commit -am "${cmt}"
 git push
 sleep 1
 echo "\e[1;36mUpdates in the tbTest app\e[0m"
+echo "--------------------"
 cd ../tbTest
 pwd
 git commit -am "${cmt}"
