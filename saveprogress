@@ -2,22 +2,31 @@
 
 cmt=$1
 
+echo "Updates in Desktop"
 cd ../thunderbolt-desktop
 pwd
 git commit -am "${cmt}"
 git push
+sleep 1
+echo "Updates in Common"
 cd ../thunderbolt-common
 pwd
 git commit -am "${cmt}"
 git push
+sleep 1
+echo "Updates in Mobile"
+sleep 1
 cd ../thunderbolt-mobile
 pwd
 git commit -am "${cmt}"
 git push
+echo "Updates in the CLI"
 cd ../thunderbolt-cli
 pwd
 git commit -am "${cmt}"
 git push
+sleep 1
+echo "Updates in the test app"
 cd ../tbTest
 pwd
 git commit -am "${cmt}"
