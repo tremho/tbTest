@@ -49,10 +49,10 @@ DEFINE MENU "main"
 <<
 
 #Tests!Tests
-#FILEAPI,File API Checks[F]
+#FILEAPI,File API Checks
 >>LAYOUT,Layout Tests
-#VERTICAL_STACK,Vertical Stack[V]
-#HORIZONTAL_STACK,Horizontal Stack[H]
+#VERTICAL_STACK,Vertical Stack
+#HORIZONTAL_STACK,Horizontal Stack
 #VERTICAL_STACK_ALIGNED,Vertical, with alignments[Alt+V]
 #HORIZONTAL_STACK_ALIGNED,Horizontal, with alignments[Alt+H]
 // #NESTED_STACK,Nested Stacks
