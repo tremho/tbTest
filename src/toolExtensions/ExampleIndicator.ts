@@ -13,7 +13,7 @@ export class ExampleIndicator {
      * @param component
      */
     onSetToPage(compInfo:CompInfo) {
-        console.log('onSetToPage', compInfo)
+        // console.log('onSetToPage', compInfo)
     }
 
     /**
