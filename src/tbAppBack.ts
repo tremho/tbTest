@@ -2,13 +2,15 @@
 import {targetPlatform} from 'thunderbolt-desktop'
 import {registerApp, TBBackApp, FrameworkBackContext} from "thunderbolt-common"
 
-// import * as MyBack from './backExtensions/testExtension'
+import * as myExtension from "./backExtensions/testExtension"
+
 class TBTestApp implements TBBackApp {
 
     appStart(context: FrameworkBackContext): Promise<void> {
         console.log('Back App Start called', Date.now())
 
-        // context.registerExtensionModule('test', MyBack)
+        console.log('registering as test', myExtension)
+        context.registerExtensionModule('test', myExtension)
 
         return Promise.resolve(undefined);
     }

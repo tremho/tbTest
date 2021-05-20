@@ -4,12 +4,14 @@ export const extensionInfo = {
     version: '1.0.0'
 }
 
-export function testFunction(banner) {
+export function testFunction(banner:string) {
     console.log('---------------------')
     console.log(banner)
     console.log('---------------------')
     console.log('')
-    console.log(`node version ${process.versions.node}`)
-    return process.versions.node
+    if (typeof process !== 'undefined') {
+        console.log(`node version ${process.versions.node}`)
+    }
+    return 'That was an epic test'
 }
 

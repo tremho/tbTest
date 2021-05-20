@@ -1,5 +1,4 @@
 
-// import Log from "./Log"
 
 import {ExampleIndicator} from "./toolExtensions/ExampleIndicator"
 
