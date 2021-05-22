@@ -7,3 +7,17 @@ indicators-id="main"
 #content
     <simple-label bind="testValues.mainLabel as text" text="Hello, this is the next page"/>
     <test-comp action="onClick" text="Well Howdy"/>
+
+    <scroll-view height="100px" width="100px">
+        <simple-label text="Hello"/>
+        <simple-label text="Line 1"/>
+        <simple-label text="Line 2"/>
+        <simple-label text="Line 3"/>
+        <simple-label text="Line 4"/>
+        <simple-label text="Line 5"/>
+        <simple-label text="Line 6"/>
+        <simple-label text="Line 7"/>
+        <simple-label text="Line 8"/>
+        <simple-label text="Line 9"/>
+        <simple-label text="Line 10"/>
+    </scroll-view>

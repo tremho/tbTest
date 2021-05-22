@@ -33,7 +33,10 @@ menu-id = "main"
     <simple-label text="$$mkdir2"/>
     <simple-label text="$$mkdir3"/>
     <fill-space height="1rem"/>
-    <simple-label text="$$readFolder"/>
+    //<scroll-view height="100px">
+        <simple-label text="Hello world"/>
+        <simple-label text="$$readFolder"/>
+    //</scroll-view>
     <fill-space height="1rem"/>
     <simple-label text="$$rmdir"/>
     <simple-label text="$$rmdir2"/>

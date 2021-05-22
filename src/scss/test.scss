@@ -1,4 +1,45 @@
 
-.target {
- background-color: deeppink;
+/* Test.scss */
+
+.TextArea {
+    color: red;
+}
+
+#target {
+    text-align: center;
+    vertical-align: center;
+    width: 200px;
+    height: 300px;
+}
+
+.landscape #target {
+    width: 300px;
+    height: 200px;
+
+}
+
+.macos #target {
+    color: black;
+    background-color: lightsteelblue;
+}
+
+.windows #target {
+    color: red;
+    background-color: greenyellow;
+
+}
+.linux #target {
+    color: darkred;
+    background-color: orange;
+}
+
+.ns-android #target {
+    color: green;
+    background-color: greenyellow;
+}
+
+.ns-ios #target {
+    color: darkblue;
+    background-color: deepskyblue;
+
 }
