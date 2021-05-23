@@ -10,7 +10,7 @@ export function pageStart(app:any) {
     })
 
     setTimeout(() => {
-        model.setAtPath('testValues.mainLabel', 'Next Page updates after 2 seconds!')
+        model.setAtPath('testValues.mainLabel', 'Next Page updated @ 2 seconds!')
     }, 2000)
 }
 

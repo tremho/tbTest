@@ -1,6 +1,17 @@
 
 /* Test.scss */
 
+#scroller {
+    background-color: lightsteelblue;
+    height: 100px;
+    width: 100px;
+}
+.ns-android #scroller {
+    height: 500px;
+    width: 300px;
+
+}
+
 #target {
     text-align: center;
     vertical-align: center;

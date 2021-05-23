@@ -8,7 +8,8 @@ indicators-id="main"
     <simple-label bind="testValues.mainLabel as text" text="Hello, this is the next page"/>
     <test-comp action="onClick" text="Well Howdy"/>
 
-    <scroll-view height="100px" width="100px">
+    <scroll-view id="scroller">
+        <stack-layout>
         <simple-label text="Hello"/>
         <simple-label text="Line 1"/>
         <simple-label text="Line 2"/>
@@ -20,4 +21,7 @@ indicators-id="main"
         <simple-label text="Line 8"/>
         <simple-label text="Line 9"/>
         <simple-label text="Line 10"/>
+        <text-area text="Now is the time for all good men to come to the aid of their country while the quick brown fox
+        is jumping over the lazy dog's back.  This is a fair amount of text, I hope it will suffice"/>
+        </stack-layout>
     </scroll-view>
