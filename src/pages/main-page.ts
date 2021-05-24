@@ -1,5 +1,5 @@
 
-// import {MenuItem} from 'thunderbolt-common'
+import {MenuItem} from 'thunderbolt-common'
 // import {Log} from 'thunderbolt-common'
 // import LogTest from './logtest'
 export const Log = {
@@ -62,33 +62,35 @@ export function onToolAction(toolEvent:any) {
 }
 export function onMenuAction(menuEvent:any) {
     Log.info('main sees a menu action for ',menuEvent.id)
-    // const app = menuEvent.app;
-    // const menuApi = app.MenuApi
-    // if(menuEvent.id === 'TEST_NEWITEM') {
-    //     const newMenuItem = new MenuItem()
-    //     newMenuItem.label = 'Newly Added Item'
-    //     newMenuItem.id = 'TEST_ADDEDITEM'
-    //     menuApi.addMenuItem("main-OPTIONS-TEST", newMenuItem)
-    //     return true
-    // }
-    // if(menuEvent.id === 'TEST_ADDEDITEM') {
-    //     menuApi.deleteMenuItem("main-OPTIONS-TEST", menuEvent.id)
-    //     return true
-    // }
-    // if(menuEvent.id === 'TEST_DISABLE') {
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_NEWITEM', false)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ADDEDITEM', false)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_DISABLE', false)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', true)
-    //     return true
-    // }
-    // if(menuEvent.id === 'TEST_ENABLE') {
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_NEWITEM', true)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ADDEDITEM', true)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_DISABLE', true)
-    //     menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', false)
-    //     return true
-    // }
+    const app = menuEvent.app;
+    const menuApi = app.MenuApi
+    if(menuEvent.id === 'TEST_NEWITEM') {
+        const newMenuItem = new MenuItem()
+        newMenuItem.label = 'Newly Added Item'
+        newMenuItem.id = 'TEST_ADDEDITEM'
+        menuApi.addMenuItem("main-OPTIONS-TEST", newMenuItem)
+        return true
+    }
+    if(menuEvent.id === 'TEST_ADDEDITEM') {
+        menuApi.deleteMenuItem("main-OPTIONS-TEST", menuEvent.id)
+        return true
+    }
+    if(menuEvent.id === 'TEST_DISABLE') {
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_NEWITEM', false)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ADDEDITEM', false)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_DISABLE', false)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', true)
+        menuApi.checkMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', false)
+        return true
+    }
+    if(menuEvent.id === 'TEST_ENABLE') {
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_NEWITEM', true)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ADDEDITEM', true)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_DISABLE', true)
+        menuApi.enableMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', false)
+        menuApi.checkMenuItem("main-OPTIONS-TEST", 'TEST_ENABLE', true)
+        return true
+    }
 
     return false
 }
