@@ -17,36 +17,66 @@ menu-id="main"
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
+        <fill-space height="2em"/>
+        <stack-layout backgroundColor="aliceblue" color="white">
+          <simple-label text="first" backgroundColor="red" />
+          <simple-label text="second"  backgroundColor="green" />
+          <simple-label text="third"  backgroundColor="blue" />
+        </stack-layout>
     </cond-sect>
 
     <cond-sect if="$isHorizontal()">
         <simple-label text="Test of horizontal stack layout"/>
-        <stack-layout orientation="horizontal">
+        <stack-layout height="5em" orientation="horizontal">
             <simple-label text="Hello"/>
             <simple-label text="This"/>
             <simple-label text="is"/>
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
+        <fill-space height="2em"/>
+        <stack-layout orientation="horizontal" backgroundColor="aliceblue"  color="white">
+          <simple-label text="first"  backgroundColor="red" />
+          <simple-label text="second" backgroundColor="green" />
+          <simple-label text="third"  backgroundColor="blue" />
+        </stack-layout>
     </cond-sect>
     <cond-sect if="$isVerticalSpaced()">
         <simple-label text="Test of vertical stack layout with independent alignments"/>
         <stack-layout orientation="vertical">
-            <simple-label text="Hello" align-text="left"/>
-            <simple-label text="This" align-text="center"/>
-            <simple-label text="is" align-text="right"/>
-            <simple-label text="a" align-text="center"/>
-            <simple-label text="Stack" align-text="center"/>
+            <simple-label text="Hello" alignment="left"/>
+            <simple-label text="This" alignment="center"/>
+            <simple-label text="is" alignment="right"/>
+            <simple-label text="a" alignment="center"/>
+            <simple-label text="Stack" alignment="left"/>
+        </stack-layout>
+        <fill-space height="2em"/>
+
+        <stack-layout backgroundColor="aliceblue" color="white">
+          <simple-label text="left" alignment="left"  backgroundColor="red"/>
+          <simple-label text="center" alignment="center"  backgroundColor="green"/>
+          <simple-label text="right" alignment="right"  backgroundColor="blue"/>
+          <simple-label text="stretch" alignment="stretch"  backgroundColor="purple"/>
         </stack-layout>
     </cond-sect>
     <cond-sect if="$isHorizontalSpaced()">
         <simple-label text="Test of horizontal stack layout with independent alignments"/>
-        <stack-layout orientation="horizontal">
-            <simple-label text="Hello" height="2rem"/>
-            <simple-label text="This" align-text="center"/>
-            <simple-label text="is" align-text="right"/>
-            <simple-label text="a" align-text="center"/>
-            <simple-label text="Stack" align-text="center"/>
+        <stack-layout height="5em" orientation="horizontal">
+            <simple-label text="Hello" alignment="top"/>
+            <simple-label text="This" alignment="middle"/>
+            <simple-label text="is" alignment="bottom"/>
+            <simple-label text="a" alignment="middle"/>
+            <simple-label text="Stack" alignment="top"/>
+        </stack-layout>
+        <fill-space height="2em"/>
+
+        <stack-layout height="10em" orientation="horizontal" backgroundColor="aliceblue" color="white">
+          <simple-label text="top" alignment="top" backgroundColor="red"/>
+          <simple-label text="middle" alignment="middle" backgroundColor="green"/>
+          <simple-label text="bottom" alignment="bottom" backgroundColor="blue"/>
+          <simple-label text="middle" alignment="middle"  backgroundColor="green"/>
+          <simple-label text="top" alignment="top"  backgroundColor="red"/>
+          <simple-label text="stretch" alignment="stretch"  backgroundColor="purple"/>
         </stack-layout>
     </cond-sect>
 
