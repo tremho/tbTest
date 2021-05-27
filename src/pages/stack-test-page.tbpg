@@ -1,6 +1,7 @@
 #page stack-test
 title="Stack Layout Test"
 menu-id="main"
+orientationReload=true
 
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
