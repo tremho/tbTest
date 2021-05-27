@@ -61,7 +61,7 @@ export function onToolAction(toolEvent:any) {
     Log.warn('current tool state is ', state)
 }
 export function onMenuAction(menuEvent:any) {
-    Log.info('main sees a menu action for ',menuEvent.id)
+    // Log.info('main sees a menu action for ',menuEvent.id)
     const app = menuEvent.app;
     const menuApi = app.MenuApi
     if(menuEvent.id === 'TEST_NEWITEM') {

@@ -9,7 +9,7 @@ menu-id="main"
     <cond-sect if="$isVertical()">
     <simple-label text="Test of vertical stack layout"/>
 
-        <fill-space height="2rem"/>
+        <fill-space height="10mm"/>
         <stack-layout>
             <simple-label text="Hello"/>
             <simple-label text="This"/>
@@ -17,7 +17,7 @@ menu-id="main"
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
-        <fill-space height="2em"/>
+        <fill-space height="10mm"/>
         <stack-layout backgroundColor="aliceblue" color="white">
           <simple-label text="first" backgroundColor="red" />
           <simple-label text="second"  backgroundColor="green" />
@@ -27,22 +27,22 @@ menu-id="main"
 
     <cond-sect if="$isHorizontal()">
         <simple-label text="Test of horizontal stack layout"/>
-        <stack-layout height="5em" orientation="horizontal">
+        <stack-layout height="1in" orientation="horizontal">
             <simple-label text="Hello"/>
             <simple-label text="This"/>
             <simple-label text="is"/>
             <simple-label text="a"/>
             <simple-label text="Stack"/>
         </stack-layout>
-        <fill-space height="2em"/>
+        <fill-space height="10mm"/>
         <stack-layout orientation="horizontal" backgroundColor="aliceblue"  color="white">
-          <simple-label text="first"  backgroundColor="red" />
-          <simple-label text="second" backgroundColor="green" />
-          <simple-label text="third"  backgroundColor="blue" />
+          <simple-label text="first"  backgroundColor="red" height="20pt"/>
+          <simple-label text="second" backgroundColor="green" height="20pt"/>
+          <simple-label text="third"  backgroundColor="blue" height="20pt"/>
         </stack-layout>
     </cond-sect>
     <cond-sect if="$isVerticalSpaced()">
-        <simple-label text="Test of vertical stack layout with independent alignments"/>
+        <simple-label text="Vertical with alignments"/>
         <stack-layout orientation="vertical">
             <simple-label text="Hello" alignment="left"/>
             <simple-label text="This" alignment="center"/>
@@ -50,7 +50,7 @@ menu-id="main"
             <simple-label text="a" alignment="center"/>
             <simple-label text="Stack" alignment="left"/>
         </stack-layout>
-        <fill-space height="2em"/>
+        <fill-space height="10mm"/>
 
         <stack-layout backgroundColor="aliceblue" color="white">
           <simple-label text="left" alignment="left"  backgroundColor="red"/>
@@ -60,23 +60,23 @@ menu-id="main"
         </stack-layout>
     </cond-sect>
     <cond-sect if="$isHorizontalSpaced()">
-        <simple-label text="Test of horizontal stack layout with independent alignments"/>
-        <stack-layout height="5em" orientation="horizontal">
+        <simple-label text="Horizontal with alignments"/>
+        <stack-layout height="1cm" orientation="horizontal">
             <simple-label text="Hello" alignment="top"/>
             <simple-label text="This" alignment="middle"/>
             <simple-label text="is" alignment="bottom"/>
             <simple-label text="a" alignment="middle"/>
             <simple-label text="Stack" alignment="top"/>
         </stack-layout>
-        <fill-space height="2em"/>
+        <fill-space height="10mm"/>
 
-        <stack-layout height="10em" orientation="horizontal" backgroundColor="aliceblue" color="white">
-          <simple-label text="top" alignment="top" backgroundColor="red"/>
-          <simple-label text="middle" alignment="middle" backgroundColor="green"/>
-          <simple-label text="bottom" alignment="bottom" backgroundColor="blue"/>
-          <simple-label text="middle" alignment="middle"  backgroundColor="green"/>
-          <simple-label text="top" alignment="top"  backgroundColor="red"/>
-          <simple-label text="stretch" alignment="stretch"  backgroundColor="purple"/>
+        <stack-layout height="2in" width="100%" orientation="horizontal" backgroundColor="aliceblue" color="white">
+          <simple-label text="top" alignment="top" backgroundColor="red" width="16.5%"/>
+          <simple-label text="middle" alignment="middle" backgroundColor="green" width="16.5%"/>
+          <simple-label text="bottom" alignment="bottom" backgroundColor="blue" width="16.5%"/>
+          <simple-label text="middle" alignment="middle"  backgroundColor="green" width="16.5%"/>
+          <simple-label text="top" alignment="top"  backgroundColor="red" width="16.5%"/>
+          <simple-label text="stretch" alignment="stretch"  backgroundColor="purple" width="16.5%"/>
         </stack-layout>
     </cond-sect>
 
