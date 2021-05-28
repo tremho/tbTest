@@ -49,17 +49,18 @@ DEFINE MENU "main"
 <<
 
 #Tests!Tests
-#FILEAPI,File API Checks [Ctrl+F]
+#FILEAPI,File API Checks
 >>LAYOUT,Layout Tests
-#VERTICAL_STACK,Vertical Stack [Ctrl+V]
-#HORIZONTAL_STACK,Horizontal Stack [Ctrl+H]
-#VERTICAL_STACK_ALIGNED,Vertical, with alignments[Alt+V]
-#HORIZONTAL_STACK_ALIGNED,Horizontal, with alignments[Alt+H]
-// #NESTED_STACK,Nested Stacks
+#VERTICAL_STACK,Vertical Stack
+#HORIZONTAL_STACK,Horizontal Stack
+#VERTICAL_STACK_ALIGNED,Vertical, with alignments
+#HORIZONTAL_STACK_ALIGNED,Horizontal, with alignments
 #--
-#VERTICAL_FLEX,Vertical Flex
-#HORIZONTAL_FLEX,Horizontal Flex
-#NESTED_FLEX,Nested Flex
+#FLEX_LAYOUT,Flexbox Layout
+#FLEX_JUSTIFY,Flexbox Justify
+#FLEX_ALIGN_ITEMS,Flexbox align items
+#FLEX_ALIGN_CONTENT,Flexbox align content
+#FLEX_CHILDREN,Flexbox Child options
 #--
 #GRID_1,Grid Example One
 #GRID_2,Grid Example Two

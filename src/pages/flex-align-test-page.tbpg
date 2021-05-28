@@ -1,0 +1,126 @@
+#page stack-test
+title="Flex Align Test"
+menu-id="main"
+orientationReload=true
+
+#content
+    <simple-label text="The page-id is $navInfo.pageId"/>
+
+    <cond-sect if="$isItems()">
+    <scroll-view>
+    <stack-layout>
+
+    <simple-label text="align: flex-start"/>
+    <flex-layout orientation="horizontal" align="flex-start" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem"  text="3" font-size="6mm"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="align: flex-end"/>
+    <flex-layout orientation="horizontal" align="flex-end" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem"  text="3" font-size="6mm"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="align: flex-center"/>
+    <flex-layout orientation="horizontal" align="center" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem"  text="3" font-size="6mm"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="align: baseline"/>
+    <flex-layout orientation="horizontal" align="baseline" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="3" font-size="6mm"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="align: stretch"/>
+    <flex-layout orientation="horizontal" align="stretch" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem"  text="3" font-size="6mm"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    </stack-layout>
+    </scroll-view>
+    </cond-sect>
+
+    <cond-sect if="$isContent()">
+    <scroll-view>
+    <stack-layout>
+
+    <simple-label text="alignContent: flex-start"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="flex-start" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+    <simple-label text="alignContent: flex-end"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="flex-end" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+    <simple-label text="alignContent: center"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="center" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+    <simple-label text="alignContent: stretch"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="stretch" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+    <simple-label text="alignContent: space-around"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="space-around" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+    <simple-label text="alignContent: space-between"/>
+    <flex-layout orientation="vertical" wrap="true" alignContent="space-between" height="16mm" width="6cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+
+    </stack-layout>
+    </scroll-view>
+    </cond-sect>
+
+$isItems() { return this.bound.navInfo.context.type === 'items'}
+$isContent() { return this.bound.navInfo.context.type === 'content'}

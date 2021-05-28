@@ -1,0 +1,50 @@
+#page stack-test
+title="Flex Feature Test"
+menu-id="main"
+orientationReload=true
+
+#content
+    <simple-label text="The page-id is $navInfo.pageId"/>
+
+    <scroll-view>
+    <stack-layout>
+
+    <simple-label text="order"/>
+    <flex-layout orientation="horizontal" width="2cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" order="1" text="One"/>
+    <simple-label class="flexItem" order="5" text="Five"/>
+    <simple-label class="flexItem" order="3" text="Three"/>
+    <simple-label class="flexItem" order="4" text="Four"/>
+    <simple-label class="flexItem" order="2" text="Two"/>
+    </flex-layout>
+
+    <simple-label text="flex-grow"/>
+    <flex-layout orientation="horizontal" backgroundColor="skyblue">
+    <simple-label class="flexItem" flexGrow="1" text="One"/>
+    <simple-label class="flexItem" flexGrow="1" text="Two"/>
+    <simple-label class="flexItem" flexGrow="4" text="Three"  backgroundColor="deeppink"/>
+    <simple-label class="flexItem" flexGrow="1" text="Four"/>
+    <simple-label class="flexItem" flexGrow="1" text="Five"/>
+    </flex-layout>
+    <simple-label text="flex-shrink"/>
+    <flex-layout orientation="horizontal" backgroundColor="skyblue">
+    <simple-label class="flexItem" flexShrink="5" text="One"/>
+    <simple-label class="flexItem" flexShrink="1" text="Two"/>
+    <simple-label class="flexItem" flexShrink="0" text="Three" backgroundColor="deeppink"/>
+    <simple-label class="flexItem" flexShrink="5" text="Four"/>
+    <simple-label class="flexItem" flexShrink="5" text="Five"/>
+    </flex-layout>
+    //<simple-label text="flex-basis"/>
+    //<simple-label text="flex shorthand"/>
+    <simple-label text="align self"/>
+    <flex-layout orientation="vertical" width="3cm" height="3cm" backgroundColor="skyblue">
+    <simple-label class="flexItem" alignSelf="flex-start" text="One"/>
+    <simple-label class="flexItem" alignSelf="flex-end" text="Two"/>
+    <simple-label class="flexItem" alignSelf="center" text="Three"/>
+    <simple-label class="flexItem" alignSelf="stretch" text="Four"/>
+    <simple-label class="flexItem" alignSelf="baseline" text="Five"/>
+    </flex-layout>
+
+
+    </stack-layout>
+    </scroll-view>

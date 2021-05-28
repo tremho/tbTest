@@ -11,6 +11,8 @@ export function appStart(appContext:any) {
 
     appContext.registerToolExtension('Example', ExampleIndicator)
 
+
+    // This must be here or nothing appears on screen.  TODO: look into this and fix defaults and/or display errors
     appContext.setPageData('file-test-page', {
         // exist1: false,
         // exist2: false,
@@ -51,6 +53,23 @@ export function appStart(appContext:any) {
         appContext.registerMenuHandler('HORIZONTAL_STACK_ALIGNED', (menuEvent:any) => {
             appContext.navigateToPage('stack-test', {type:'horizontal-spaced'})
         })
+
+        appContext.registerMenuHandler('FLEX_LAYOUT', (menuEvent:any) => {
+            appContext.navigateToPage('flex-layout-test')
+        })
+        appContext.registerMenuHandler('FLEX_JUSTIFY', (menuEvent:any) => {
+            appContext.navigateToPage('flex-justify-test')
+        })
+        appContext.registerMenuHandler('FLEX_ALIGN_ITEMS', (menuEvent:any) => {
+            appContext.navigateToPage('flex-align-test', {type:'items'})
+        })
+        appContext.registerMenuHandler('FLEX_ALIGN_CONTENT', (menuEvent:any) => {
+            appContext.navigateToPage('flex-align-test', {type:'content'})
+        })
+        appContext.registerMenuHandler('FLEX_CHILDREN', (menuEvent:any) => {
+            appContext.navigateToPage('flex-children-test')
+        })
+
 
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')

@@ -1,0 +1,90 @@
+#page stack-test
+title="Flex Layout Test"
+menu-id="main"
+orientationReload=true
+
+#content
+    <simple-label text="The page-id is $navInfo.pageId"/>
+
+    <scroll-view>
+    <div>
+
+    <simple-label text="flex row nowrap, full width"/>
+    <flex-layout orientation="horizontal">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="flex row nowrap, 30mm"/>
+    <flex-layout orientation="horizontal" width="30mm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="flex row wrap"/>
+    <flex-layout orientation="horizontal" width="30mm" wrap="true">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="flex row wrap-reverse"/>
+    <flex-layout orientation="horizontal"  width="30mm" wrap="reverse">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <simple-label text="flex column nowrap, unconstrained"/>
+    <flex-layout orientation="vertical">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <fill-space height="10mm"/>
+
+    <simple-label text="flex column nowrap, 16mm"/>
+    <flex-layout orientation="vertical" height="16mm" backgroundColor="skyblue">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    <fill-space height="2cm"/>
+
+    <simple-label text="flex column wrap"/>
+    <flex-layout orientation="vertical" wrap="true" height="16mm">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+    <fill-space height="1cm"/>
+
+    <simple-label text="flex column wrap-reverse"/>
+    <flex-layout orientation="vertical" wrap="reverse" height="16mm">
+    <simple-label class="flexItem" text="One"/>
+    <simple-label class="flexItem" text="Two"/>
+    <simple-label class="flexItem" text="Three"/>
+    <simple-label class="flexItem" text="Four"/>
+    <simple-label class="flexItem" text="Five"/>
+    </flex-layout>
+
+    </div>
+    </scroll-view>
