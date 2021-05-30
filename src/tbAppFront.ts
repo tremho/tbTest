@@ -70,6 +70,16 @@ export function appStart(appContext:any) {
             appContext.navigateToPage('flex-children-test')
         })
 
+        appContext.registerMenuHandler('GRID_1', (menuEvent:any) => {
+            appContext.navigateToPage('grid-test-1')
+        })
+        appContext.registerMenuHandler('GRID_2', (menuEvent:any) => {
+            appContext.navigateToPage('grid-test-2')
+        })
+        appContext.registerMenuHandler('GRID_3', (menuEvent:any) => {
+            appContext.navigateToPage('grid-test-3')
+        })
+
 
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')

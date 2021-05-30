@@ -1,4 +1,4 @@
-#page stack-test
+#page flex-children-test
 title="Flex Feature Test"
 menu-id="main"
 orientationReload=true
@@ -6,11 +6,10 @@ orientationReload=true
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
 
-    <scroll-view>
-    <stack-layout>
+    <scroll-view height="100%">
 
     <simple-label text="order"/>
-    <flex-layout orientation="horizontal" width="2cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" width="2cm" backgroundColor="skyblue">
     <simple-label class="flexItem" order="1" text="One"/>
     <simple-label class="flexItem" order="5" text="Five"/>
     <simple-label class="flexItem" order="3" text="Three"/>
@@ -19,7 +18,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="flex-grow"/>
-    <flex-layout orientation="horizontal" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" backgroundColor="skyblue">
     <simple-label class="flexItem" flexGrow="1" text="One"/>
     <simple-label class="flexItem" flexGrow="1" text="Two"/>
     <simple-label class="flexItem" flexGrow="4" text="Three"  backgroundColor="deeppink"/>
@@ -27,7 +26,7 @@ orientationReload=true
     <simple-label class="flexItem" flexGrow="1" text="Five"/>
     </flex-layout>
     <simple-label text="flex-shrink"/>
-    <flex-layout orientation="horizontal" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" backgroundColor="skyblue">
     <simple-label class="flexItem" flexShrink="5" text="One"/>
     <simple-label class="flexItem" flexShrink="1" text="Two"/>
     <simple-label class="flexItem" flexShrink="0" text="Three" backgroundColor="deeppink"/>
@@ -37,7 +36,7 @@ orientationReload=true
     //<simple-label text="flex-basis"/>
     //<simple-label text="flex shorthand"/>
     <simple-label text="align self"/>
-    <flex-layout orientation="vertical" width="3cm" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" width="3cm" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" alignSelf="flex-start" text="One"/>
     <simple-label class="flexItem" alignSelf="flex-end" text="Two"/>
     <simple-label class="flexItem" alignSelf="center" text="Three"/>
@@ -45,6 +44,4 @@ orientationReload=true
     <simple-label class="flexItem" alignSelf="baseline" text="Five"/>
     </flex-layout>
 
-
-    </stack-layout>
     </scroll-view>

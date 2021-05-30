@@ -1,4 +1,4 @@
-#page stack-test
+#page flex-justify-test
 title="Flex Justify Test"
 menu-id="main"
 orientationReload=true
@@ -6,11 +6,10 @@ orientationReload=true
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
 
-    <scroll-view>
-    <stack-layout>
+    <scroll-view height="100%">
 
     <simple-label text="justify: flex-start"/>
-    <flex-layout orientation="horizontal" justify="flex-start">
+    <flex-layout flexDirection="row" justifyContent="flex-start" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -19,7 +18,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="justify: flex-end"/>
-    <flex-layout orientation="horizontal" justify="flex-end">
+    <flex-layout flexDirection="row" justifyContent="flex-end" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -28,7 +27,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="justify: flex-center"/>
-    <flex-layout orientation="horizontal" justify="center">
+    <flex-layout flexDirection="row" justifyContent="center" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -37,7 +36,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="justify: space-around"/>
-    <flex-layout orientation="horizontal" justify="space-around">
+    <flex-layout flexDirection="row" justifyContent="space-around" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -45,7 +44,7 @@ orientationReload=true
     <simple-label class="flexItem" text="Five"/>
     </flex-layout>
     <simple-label text="justify: space-between"/>
-    <flex-layout orientation="horizontal" justify="space-between">
+    <flex-layout flexDirection="row" justifyContent="space-between" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -53,17 +52,17 @@ orientationReload=true
     <simple-label class="flexItem" text="Five"/>
     </flex-layout>
 
-    <simple-label text="justify: space-evenly"/>
-    <flex-layout orientation="horizontal" justify="space-evenly">
-    <simple-label class="flexItem" text="One"/>
-    <simple-label class="flexItem" text="Two"/>
-    <simple-label class="flexItem" text="Three"/>
-    <simple-label class="flexItem" text="Four"/>
-    <simple-label class="flexItem" text="Five"/>
-    </flex-layout>
-    <fill-space height="8mm"/>
-    <simple-label text="flex-grow"/>
-    <simple-label text="flex-shrink"/>
+// Can't be done on {N}
+//    <simple-label text="justify: space-evenly"/>
+//    <flex-layout flexDirection="row" justifyContent="space-evenly" backgroundColor="skyblue">
+//    <simple-label class="flexItem" text="One"/>
+//    <simple-label class="flexItem" text="Two"/>
+//    <simple-label class="flexItem" text="Three"/>
+//    <simple-label class="flexItem" text="Four"/>
+//    <simple-label class="flexItem" text="Five"/>
+//    </flex-layout>
+//    <fill-space height="8mm"/>
+//    <simple-label text="flex-grow"/>
+//    <simple-label text="flex-shrink"/>
 
-    </stack-layout>
     </scroll-view>

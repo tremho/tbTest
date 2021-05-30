@@ -27,9 +27,7 @@ menu-id = "main"
     <fill-space height="1rem"/>
     <simple-label text="copied file $$copy"/>
     <fill-space height="1rem"/>
-    //<scroll-view>
-        <text-area text="tested Stats: $$stats"/>
-    //</scroll-view>
+    <text-area text="tested Stats: $$stats"/>
     <fill-space height="1rem"/>
     <simple-label text="made folder tree: $$mkdir"/>
     <simple-label text="$$mkdir2"/>

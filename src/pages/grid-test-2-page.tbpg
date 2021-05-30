@@ -1,0 +1,71 @@
+#page grid-test-2
+title="Grid Layout 2"
+menu-id="main"
+orientationReload=true
+
+#content
+    <simple-label text="The page-id is $navInfo.pageId"/>
+
+    <scroll-view height="100%">
+
+    <simple-label text="example 1 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 2 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 3 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 4 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 5 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 6 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 7 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 8 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 9 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 10 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 11 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 12 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 13 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 14 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 15 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 16 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 17 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 18 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 19 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    <simple-label text="example 20 of 20"/>
+    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+
+    </scroll-view>

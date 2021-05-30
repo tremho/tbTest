@@ -1,4 +1,4 @@
-#page stack-test
+#page flex-align-test
 title="Flex Align Test"
 menu-id="main"
 orientationReload=true
@@ -7,11 +7,11 @@ orientationReload=true
     <simple-label text="The page-id is $navInfo.pageId"/>
 
     <cond-sect if="$isItems()">
-    <scroll-view>
+    <scroll-view height="100%">
     <stack-layout>
 
     <simple-label text="align: flex-start"/>
-    <flex-layout orientation="horizontal" align="flex-start" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" alignItems="flex-start" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem"  text="3" font-size="6mm"/>
@@ -20,7 +20,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="align: flex-end"/>
-    <flex-layout orientation="horizontal" align="flex-end" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" alignItems="flex-end" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem"  text="3" font-size="6mm"/>
@@ -29,7 +29,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="align: flex-center"/>
-    <flex-layout orientation="horizontal" align="center" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" alignItems="center" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem"  text="3" font-size="6mm"/>
@@ -38,7 +38,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="align: baseline"/>
-    <flex-layout orientation="horizontal" align="baseline" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" alignItems="baseline" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="3" font-size="6mm"/>
@@ -47,7 +47,7 @@ orientationReload=true
     </flex-layout>
 
     <simple-label text="align: stretch"/>
-    <flex-layout orientation="horizontal" align="stretch" height="3cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="row" alignItems="stretch" height="3cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem"  text="3" font-size="6mm"/>
@@ -60,11 +60,10 @@ orientationReload=true
     </cond-sect>
 
     <cond-sect if="$isContent()">
-    <scroll-view>
-    <stack-layout>
+    <scroll-view height="100%">
 
     <simple-label text="alignContent: flex-start"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="flex-start" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="flex-start" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -73,7 +72,7 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
     <simple-label text="alignContent: flex-end"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="flex-end" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="flex-end" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -82,7 +81,7 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
     <simple-label text="alignContent: center"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="center" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="center" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -91,7 +90,7 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
     <simple-label text="alignContent: stretch"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="stretch" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="stretch" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -100,7 +99,7 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
     <simple-label text="alignContent: space-around"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="space-around" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="space-around" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -109,7 +108,7 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
     <simple-label text="alignContent: space-between"/>
-    <flex-layout orientation="vertical" wrap="true" alignContent="space-between" height="16mm" width="6cm" backgroundColor="skyblue">
+    <flex-layout flexDirection="column" flexWrap="wrap" alignContent="space-between" height="16mm" width="6cm" backgroundColor="skyblue">
     <simple-label class="flexItem" text="One"/>
     <simple-label class="flexItem" text="Two"/>
     <simple-label class="flexItem" text="Three"/>
@@ -118,7 +117,6 @@ orientationReload=true
     </flex-layout>
     <fill-space height="1cm"/>
 
-    </stack-layout>
     </scroll-view>
     </cond-sect>
 
