@@ -33,7 +33,8 @@ orientationReload=true
         </grid-layout>
 
     <simple-label text="placement in grid cell"/>
-        <grid-layout rows="80px 80px" columns="100px 100px 100px" gridGap="10px">
+        <grid-layout rows="80px 80px" columns="100px 100px 100px"
+            gridGap="10px">
           <simple-label class="box" col="1" row="0" text="A"/>
           <simple-label class="box" col="1" row="1" text="B"/>
           <simple-label class="box" col="2" row="1" text="C"/>
@@ -54,52 +55,52 @@ orientationReload=true
         </grid-layout>
 
 
-    <simple-label text="example 5 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
+    <simple-label text="define grid areas"/>
+     <grid-layout areaRow1="a b c"
+                  areaRow2="d e f"
+                  gridTemplateColumns="120px 120px 120px"
+                  gridGap="10px" >
+        <simple-label gridArea="e" text="A" class="box"/>
+        <simple-label gridArea="f" text="B" class="box"/>
+        <simple-label gridArea="d" text="C" class="box"/>
+        <simple-label gridArea="a" text="D" class="box"/>
+        <simple-label gridArea="b" text="E" class="box"/>
+        <simple-label gridArea="c" text="F" class="box"/>
+    </grid-layout>
 
-    <simple-label text="example 6 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
+    //<hr/>
 
-    <simple-label text="example 7 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
+    <simple-label text="placement by name prefixes"/>
+     <grid-layout areaRow1="....... header  header"
+                  areaRow2="sidebar content content"
+                  gridTemplateColumns="repeat(3, 120px)"
+                  gridGap = "10px">
+        <simple-label gridArea="header" text="header"/>
+        <simple-label gridArea="sidebar" text="sidebar"/>
+        <simple-label gridArea="content" text="content"/>
+        <simple-label row="content" col="content-end" text="#" color="red" backgroundColor="black"/>
+    </grid-layout>
 
-    <simple-label text="example 8 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
+    <simple-label text="independent position context"/>
+    <grid-layout gridGap="10px"
+                 gridTemplateColumns="200px 200px 200px"
+                 areaRow1="header header header"
+                 areaRow2="sidebar content content"
+                 areaRow3 = "footer footer footer"
+                 backgroundColor="#fff"
+                 color="#444">
+        <simple-label gridArea="header" text="header"/>
+        <simple-label gridArea="sidebar" text="sidebar"/>
+//        <simple-label gridArea="content" text="content">
+        <stack-layout gridArea="content">
+            <simple-label text="content"/>
+            //<simple-label text= "The four arrows are inline images inside the content area."/>
+            //<simple-image src="http://gridbyexample.com/examples/code/arrow-top-left.png" alt="top left" class="topleft" />
+            //<simple-image src="http://gridbyexample.com/examples/code/arrow-top-right.png" alt="top right" class="topright" />
+            //<simple-image src="http://gridbyexample.com/examples/code/arrow-bottom-left.png" alt="bottom left" class="bottomleft" />
+            //<simple-image src="http://gridbyexample.com/examples/code/arrow-bottom-right.png" alt="bottom right" class="bottomright" />
+        </stack-layout>
+    </grid-layout>
 
-    <simple-label text="example 9 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 10 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 11 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 12 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 13 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 14 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 15 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 16 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 17 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 18 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 19 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
-
-    <simple-label text="example 20 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="skyblue"/>
 
     </scroll-view>
