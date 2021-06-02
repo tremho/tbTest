@@ -88,9 +88,8 @@ orientationReload=true
                  color="#444">
         <simple-label gridArea="header" text="header"/>
         <simple-label gridArea="sidebar" text="sidebar"/>
-//        <simple-label gridArea="content" text="content">
-        <stack-layout gridArea="content">
-            <simple-label text="content"/>
+        <stack-layout gridArea="content" width="1in" height="1in" backgroundColor="skyblue">
+            <simple-label text="content" align="middle"/>
             //<simple-label text= "The four arrows are inline images inside the content area."/>
             //<simple-image src="http://gridbyexample.com/examples/code/arrow-top-left.png" alt="top left" class="topleft" />
             //<simple-image src="http://gridbyexample.com/examples/code/arrow-top-right.png" alt="top right" class="topright" />
