@@ -67,9 +67,7 @@ orientationReload=true
         <simple-label gridArea="c" text="F" class="box"/>
     </grid-layout>
 
-    //<hr/>
-
-    <simple-label text="placement by name prefixes"/>
+    <simple-label text="placement by name + offset"/>
      <grid-layout areaRow1="....... header  header"
                   areaRow2="sidebar content content"
                   gridTemplateColumns="repeat(3, 120px)"
@@ -77,7 +75,7 @@ orientationReload=true
         <simple-label gridArea="header" text="header"/>
         <simple-label gridArea="sidebar" text="sidebar"/>
         <simple-label gridArea="content" text="content"/>
-        <simple-label row="content" col="content-end" text="#" color="red" backgroundColor="black"/>
+        <simple-label gridArea="content" col="+1" text="#" color="red" backgroundColor="black"/>
     </grid-layout>
 
     <simple-label text="independent position context"/>
