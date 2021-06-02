@@ -75,7 +75,7 @@ orientationReload=true
         <simple-label gridArea="header" text="header"/>
         <simple-label gridArea="sidebar" text="sidebar"/>
         <simple-label gridArea="content" text="content"/>
-        <simple-label gridArea="content" col="+1" text="#" color="red" backgroundColor="black"/>
+        <simple-label gridArea="content" col="1" row="-1" text="#" color="red" backgroundColor="black"/>
     </grid-layout>
 
     <simple-label text="independent position context"/>
