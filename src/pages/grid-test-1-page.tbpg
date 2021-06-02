@@ -33,8 +33,7 @@ orientationReload=true
         </grid-layout>
 
     <simple-label text="placement in grid cell"/>
-        <grid-layout rows="80px 80px" columns="100px 100px 100px"
-            gridGap="10px">
+        <grid-layout rows="80px 80px" columns="100px 100px 100px" gridGap="10px">
           <simple-label class="box" col="1" row="0" text="A"/>
           <simple-label class="box" col="1" row="1" text="B"/>
           <simple-label class="box" col="2" row="1" text="C"/>
