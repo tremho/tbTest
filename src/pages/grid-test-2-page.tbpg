@@ -8,11 +8,38 @@ orientationReload=true
 
     <scroll-view height="100%">
 
-    <simple-label text="example 1 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+    <simple-label text="use of standard grid-x-start/end notation"/>
+     <grid-layout gridTemplateColumns="120px 120px 120px"
+                  gridTemplateRows="120px 120px"
+                  gridGap="10px" >
+        <simple-label gridColumnStart="2" gridRowStart="2" text="A" class="box"/>
+        <simple-label gridColumnStart="3" gridRowStart="2" text="B" class="box"/>
+        <simple-label gridColumnStart="1" gridRowStart="2"  text="C" class="box"/>
+        <simple-label gridColumnStart="1" gridRowStart="1" text="D" class="box"/>
+        <simple-label gridColumnStart="2" gridRowStart="1"  text="E" class="box"/>
+        <simple-label gridColumnStart="3" gridRowStart="1" text="F" class="box"/>
+    </grid-layout>
 
-    <simple-label text="example 2 of 20"/>
-    <stack-layout width="2in" height="2in" backgroundColor="salmon"/>
+    <simple-label text="use of standard grid-x-start/end notation II"/>
+     <grid-layout gridTemplateColumns="repeat(3, 120px)"
+                  gridTemplateRows="repeat(2, 120px)"
+                  gridGap="10px" >
+        <simple-label gridColumnStart="1" gridRowStart="1" gridColumnEnd="2" text="A" class="box"/>
+        <simple-label gridColumnStart="3" gridRowStart="1" gridRowEnd="2" text="B" class="box"/>
+        <simple-label gridColumnStart="1" gridRowStart="2" gridColumnEnd="2" text="C" class="box"/>
+    </grid-layout>
+
+    <simple-label text="transition to areas"/>
+     <grid-layout gridTemplateAreas="a b c/d e f"
+                  gridTemplateColumns="120px 120px 120px"
+                  gridGap="10px" >
+        <simple-label gridArea="e" text="A" class="box"/>
+        <simple-label gridArea="f" text="B" class="box"/>
+        <simple-label gridArea="d" text="C" class="box"/>
+        <simple-label gridArea="a" text="D" class="box"/>
+        <simple-label gridArea="b" text="E" class="box"/>
+        <simple-label gridArea="c" text="F" class="box"/>
+    </grid-layout>
 
     <simple-label text="example 3 of 20"/>
     <stack-layout width="2in" height="2in" backgroundColor="salmon"/>

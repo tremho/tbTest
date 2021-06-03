@@ -55,10 +55,9 @@ orientationReload=true
 
 
     <simple-label text="define grid areas"/>
-     <grid-layout areaRow1="a b c"
-                  areaRow2="d e f"
-                  gridTemplateColumns="120px 120px 120px"
-                  gridGap="10px" >
+     <grid-layout areas="a b c/d e f"
+                  columns="120px 120px 120px"
+                  gap="10px" >
         <simple-label gridArea="e" text="A" class="box"/>
         <simple-label gridArea="f" text="B" class="box"/>
         <simple-label gridArea="d" text="C" class="box"/>
@@ -68,10 +67,9 @@ orientationReload=true
     </grid-layout>
 
     <simple-label text="placement by name + offset"/>
-     <grid-layout areaRow1="....... header  header"
-                  areaRow2="sidebar content content"
+     <grid-layout areas="....... header  header/sidebar content content"
                   gridTemplateColumns="repeat(3, 120px)"
-                  gridGap = "10px">
+                  gridGap="10px">
         <simple-label gridArea="header" text="header"/>
         <simple-label gridArea="sidebar" text="sidebar"/>
         <simple-label gridArea="content" text="content"/>
@@ -81,9 +79,7 @@ orientationReload=true
     <simple-label text="independent position context"/>
     <grid-layout gridGap="10px"
                  gridTemplateColumns="200px 200px 200px"
-                 areaRow1="header header header"
-                 areaRow2="sidebar content content"
-                 areaRow3 = "footer footer footer"
+                 areas="header header header/sidebar content content/footer footer footer"
                  backgroundColor="#fff"
                  color="#444">
         <simple-label gridArea="header" text="header"/>
