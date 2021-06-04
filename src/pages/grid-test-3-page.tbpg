@@ -2,15 +2,16 @@
 title="Grid Layout 3"
 menu-id="main"
 orientationReload=true
-
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
-
+    <fill-space height="2em"/>
     <scroll-view height="100%">
 
-    <simple-label text="using this to test dash-to-camel &amp; entities"/>
-    <simple-label text="more &apos;entities&apos; like &quot;this&quot; is &gt; than that"/>
-    <simple-label text="&amp; &apos; &lt; &quot; !== ` "/>
+    <simple-label text="using this to test "/>
+    <simple-label text="dash-to-camel &amp; entities" />
+    <simple-label text="more &apos;entities&apos;" />
+    <simple-label text="like &quot;this&quot; is &gt; than that" />
+    <simple-label text="&amp; &apos; &lt; &quot; !== ` " />
 
     <simple-label text="declare as dash separated properties"/>
      <grid-layout grid-template-columns="120px 120px 120px"
@@ -23,5 +24,34 @@ orientationReload=true
         <simple-label grid-column-start="2" grid-row-start="1"  text="E" class="box"/>
         <simple-label grid-column-start="3" grid-row-start="1" text="F" class="box"/>
      </grid-layout>
+
+     <simple-label text="Using this to test preprocessor"/>
+     <!-- #if desktop -->
+        <simple-label text="this should appear on desktop only (1)"/>
+     <!-- #end if -->
+
+     <!-- #if mobile -->
+        <simple-label text="this should appear on mobile only (1)"/>
+     <!-- #else -->
+        <simple-label text="this should appear on desktop only (2)"/>
+     <!-- #end if -->
+
+    <!-- #DEFINE FOOBAR=AWESOME -->
+    <!-- #IF DESKTOP -->
+    <!-- #DEFINE Color=blue -->
+    <!-- #ELSE -->
+    <!-- #DEFINE Color=green -->
+
+    <!-- #if FOOBAR==AWESOME -->
+        <simple-label text="the preprocessor is #{FOOBAR}" color="#{Color}"/>
+     <!-- #else -->
+        <simple-label text="preprocessor fails else test" color="red"/>
+     <!-- #end if -->
+
+     <!-- #DEFINE BAZ=#{FOOBAR} -->
+        <simple-label text="BAZ is #{BAZ} too" color="#{Color}"/>
+
+
+     <simple-label text="thank you for your time"/>
 
     </scroll-view>
