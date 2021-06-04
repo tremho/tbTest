@@ -80,6 +80,10 @@ export function appStart(appContext:any) {
             appContext.navigateToPage('grid-test-3')
         })
 
+        appContext.registerMenuHandler('PREPROC', (menuEvent:any) => {
+            appContext.navigateToPage('preproc-test')
+        })
+
 
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')

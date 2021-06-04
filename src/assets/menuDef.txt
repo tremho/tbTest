@@ -65,6 +65,8 @@ DEFINE MENU "main"
 #GRID_1,Grid Example One[Ctrl+1]
 #GRID_2,Grid Example Two[Ctrl+2]
 #GRID_3,Grid Example Three[Ctrl+3]
+#--
+#PREPROC,Pre-processor tests[Ctrl+Cmd+P]
 <<
 
 

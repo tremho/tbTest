@@ -1,0 +1,104 @@
+#page preproc-test
+title="Preprocessor test"
+menu-id="main"
+orientationReload=true
+#content
+
+    <simple-label text="Preprocessor Tests"/>
+
+    <scroll-view height="100%">
+    <fill-space height="1cm"/>
+
+    <!-- #if desktop -->
+    <simple-label text="this should appear on desktop only (1)"/>
+    <!-- #end if -->
+    <!-- #if mobile -->
+    <simple-label text="this should appear on mobile only (1)"/>
+    <!-- #else -->
+    <simple-label text="this should appear on desktop only (2)"/>
+    <!-- #end if -->
+
+    <!-- #DEFINE FOOBAR=AWESOME -->
+    <!-- #IF DESKTOP -->
+    <!-- #DEFINE Color=blue -->
+    <!-- #ELSE -->
+    <!-- #DEFINE Color=green -->
+    <!-- #ENDIF -->
+
+    <!-- #if FOOBAR==AWESOME -->
+    <simple-label text="the preprocessor is #{FOOBAR}" color="#{Color}"/>
+    <!-- #else -->
+    <simple-label text="preprocessor fails else test" color="red"/>
+    <!-- #end if -->
+
+    <!-- #DEFINE BAZ=#{FOOBAR} -->
+    <simple-label text="BAZ is #{BAZ} too" color="#{Color}"/>
+
+
+    <!-- #define style=color="red" background-color="yellow" font-size="2em" -->
+    <!-- #define macro=<simple-label text="macro line 1"/><simple-label text="macro line 2"/> -->
+
+    <!-- #define TestValue=3.14 -->
+    <!-- #define Pi = 3.1415927 -->
+    <!-- #define Answer = 42 -->
+    <!-- #if desktop -->
+        <!-- #define Identity=Electron -->
+    <!-- #else -->
+        <!-- #define Identity=Nativescript -->
+    <!-- #endif -->
+
+    <!-- #if true -->
+        <simple-label text="testing nesting" #{style}/>
+        <!-- #if Pi==#{TestValue} -->
+        <simple-label text="close, but not right" color="red" />
+        <!-- #else if Pi==3.1415927 -->
+        <simple-label text="correct!" color="green"/>
+            <!-- #if desktop -->
+                <simple-label text="we are on the desktop"/>
+            <!-- #elseif FOOBAR==AWESOME -->
+                <simple-label text="we are on mobile, and it is #{FOOBAR}"/>
+            <!-- #else -->
+                #{macro}
+            <!-- #if false -->
+            <simple-label text="We shouldn't see this" color="red"/>
+            <!-- #else -->
+            <simple-label text="We identify as #{Identity}"/>
+                <!-- #if Identity==Electron -->
+                    <!-- #define Identity = Desktop -->
+                <!-- #endif -->
+            <!-- #endif -->
+        <!-- #endif -->
+    <!-- #endif -->
+    <simple-label text="Redefined identity is #{Identity}"/>
+    <!-- #if desktop -->
+        <!-- #if Identity == Desktop -->
+        <simple-label text="As expected for desktop" color="green"/>
+        <!-- #else -->
+         <!-- #if mobile -->
+          <!-- #if Identity == Nativescript -->
+          <simple-label text="As expected for mobile" color="green"/>
+          <!-- #endif id check 2-->
+         <!-- #endif mobile-->
+        <!-- #endif id check 1-->
+    <!-- #endif desktop-->
+        <!-- #define aggie='one' -->
+        <simple-label text="aggie = #{aggie}"/>
+        <!-- #define aggie=#{aggie} two -->
+        <simple-label text="aggie = #{aggie}"/>
+        <!-- #define aggie=#{aggie} three -->
+        <simple-label text="aggie = #{aggie}"/>
+        <!-- #define aggie= -->
+        <simple-label text="aggie = #{aggie}"/>
+        <simple-label text="unknown = #{unknown}"/>
+        <!-- #if aggie== -->
+        <simple-label text="test to null okay"/>
+        <!-- #else -->
+        <simple-label text="test to null failed" color="red"/>
+        <fill-space height="12pt"/>
+
+
+        <simple-label text="thank you for your time" background-color="yellow"/>
+
+    <fill-space height="2cm"/>
+
+    </scroll-view>
