@@ -84,6 +84,9 @@ export function appStart(appContext:any) {
             appContext.navigateToPage('preproc-test')
         })
 
+        appContext.registerMenuHandler('PROPSET', (menuEvent:any) => {
+            appContext.navigateToPage('propset-test')
+        })
 
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')

@@ -66,8 +66,12 @@ DEFINE MENU "main"
 #GRID_2,Grid Example Two[Ctrl+2]
 #GRID_3,Grid Example Three[Ctrl+3]
 #--
-#PREPROC,Pre-processor tests[Ctrl+Cmd+P]
 <<
+>>MISC,Misc Tests
+#PREPROC,Pre-processor tests[Ctrl+Cmd+P]
+#PROPSET,Properties set tests[Ctrl+Cmd+S]
+<<
+#--
 
 
 @D#VIEW:viewMenu!View

@@ -1,0 +1,94 @@
+#page propset-test
+title="Preprocessor test"
+menu-id="main"
+orientationReload=true
+
+
+// For this test, we need to have
+
+#content
+
+    <simple-label text="Property sets"/>
+
+    <scroll-view height="100%">
+    <fill-space height="1cm"/>
+
+        // container
+        <simple-label text="simple-label"/>
+        <simple-label text="color can be set" color="red"/>
+        <simple-label text="color can be set" color="blue"/>
+        <simple-label text="color can be set" color="green"/>
+        <simple-label text="background color can be set" background-color="skyblue" />
+        <simple-label text="background color can be set" backgroundColor="skyblue" />
+        <simple-label text="width only" background-color="skyblue" width="2in"/>
+        <simple-label text="height only" background-color="skyblue" height="1in"/>
+        <simple-label text="width and height can be set" background-color="skyblue" width="2in" height="1in" class="w2in"/>
+
+        <simple-label text="In Container"/>
+        <stack-layout class="testContainer">
+            <simple-label text="middle center, center" align="middle,center" text-align="center" class="w2in"/>
+        </stack-layout>
+        <fill-space height="10px"/>
+        <stack-layout class="testContainer">
+            <simple-label text="middle left, left" align="middle, left" text-align="left" class="w2in"/>
+        </stack-layout>
+        <fill-space height="10px"/>
+        <stack-layout class="testContainer">
+            <simple-label text="middle right, right" align="middle,right" text-align="right" class="w2in"/>
+        </stack-layout>
+        <fill-space height="10px"/>
+        <stack-layout class="testContainer">
+            <simple-label text="top right, left" align="top, right" text-align="left" class="w2in"/>
+        </stack-layout>
+        <stack-layout class="testContainer">
+            <simple-label text="middle left, right" align="middle left" text-align="right" class="w2in"/>
+        </stack-layout>
+        <stack-layout class="testContainer">
+            <simple-label text="bottom center, center" align="bottom center" text-align="center" class="w2in"/>
+        </stack-layout>
+
+
+        // color and background
+    // color
+    // background (full monte)
+        <simple-label text="background" background="lightblue url('zeus.jpg') no-repeat fixed center" />
+        //color, image, position, size, repeat, origin, clip, attachment
+        <simple-label text="background-color" background="lightblue"/>
+        <simple-label text="background-image" background="url('zeus.jpg')" />
+
+        //https://www.w3.org/People/Bos/Stylesheets/textfont.html
+
+        // Font characteristics
+    //font	(full monte))
+    //font-family	string+	inherited (-)
+    //font-weight	..., -2, -1, 0, 1, 2,...	inherited (0)	1=bold, 2=extra-bold, etc.
+    //font-expansion	..., -2, -1, 0, 1, 2,...	inherited (0)	0=normal, 1=expanded, etc.
+    //font-style	(italic|slanted|roman|small-caps)+	inherited (roman)
+    //font-size	..., -2, -1, 0, 1, 2,...|length	0 (-)	n=1.2^n times parent's size; lengthin pt
+    //encoding	encoding	inherited (none)	Postscript-like encoding vector
+
+    //text.spacing	number	100%	2.0=double space between letters
+    //text.transform	lowercase|uppercase|capitalize|none	inherited (none)
+    //text.underline	0|1|2	inherited (0)
+    //text.strikethrough	0|1|2	inherited (0)
+    //text.overline
+
+        // Line breaks and clipping
+
+    //break.before	number|length	none
+    //break.after	number|length	none
+    //rule.before	number|length	none	implies break.before
+    //rule.after	number|length	none	implies break after
+    //rule.left	number|length	none
+    //rule.right	number|length	none
+    //rule.thickness	number|length	inherited (-)
+    //rule.style	keyword	inherited (-)	single, double, etched, etc.
+    //rule.color	color	inherited (-)
+    //margin.left	number|length	0
+    //margin.right	number|length	0
+    //page.before	-2, -1, 0, 1, 2	0	0=don't care, 2=required
+    //page.after	-2, -1, 0, 1, 2	0	-2=never, -1=discourage
+
+        <fill-space height="2cm"/>
+
+    </scroll-view>
