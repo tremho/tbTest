@@ -26,7 +26,7 @@ orientationReload=true
 
         <simple-label text="In Container"/>
         <stack-layout class="testContainer">
-            <simple-label text="middle center, center" align="middle,center" text-align="center" class="w2in"/>
+            <simple-label text="middle center, center" align="middle,center" text-align="center" class="w2in vcenter"/>
         </stack-layout>
         <fill-space height="10px"/>
         <stack-layout class="testContainer">
@@ -51,10 +51,9 @@ orientationReload=true
         // color and background
     // color
     // background (full monte)
-        <simple-label text="background" background="lightblue url('zeus.jpg') no-repeat fixed center" />
-        //color, image, position, size, repeat, origin, clip, attachment
-        <simple-label text="background-color" background="lightblue"/>
-        <simple-label text="background-image" background="url('zeus.jpg')" />
+        <stack-layout background="lightblue url('images/zeus.jpg') no-repeat center contain" width="3in" height="3in" >
+            <simple-label text="background"/>
+        </stack-layout>
 
         //https://www.w3.org/People/Bos/Stylesheets/textfont.html
 
