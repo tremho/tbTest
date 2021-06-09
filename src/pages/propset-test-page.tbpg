@@ -25,25 +25,25 @@ orientationReload=true
         <simple-label text="width and height can be set" background-color="skyblue" width="2in" height="1in" class="w2in"/>
 
         <simple-label text="In Container"/>
-        <stack-layout class="testContainer">
-            <simple-label text="middle center, center" align="middle,center" text-align="center" class="w2in vcenter"/>
+        <stack-layout class="testContainer" height="3.5cm">
+            <simple-label text="middle center, center" align="middle,center" text-align="center" class="w2in"/>
         </stack-layout>
         <fill-space height="10px"/>
-        <stack-layout class="testContainer">
+        <stack-layout class="testContainer" height="3.5cm">
             <simple-label text="middle left, left" align="middle, left" text-align="left" class="w2in"/>
         </stack-layout>
         <fill-space height="10px"/>
-        <stack-layout class="testContainer">
+        <stack-layout class="testContainer" height="3.5cm">
             <simple-label text="middle right, right" align="middle,right" text-align="right" class="w2in"/>
         </stack-layout>
         <fill-space height="10px"/>
-        <stack-layout class="testContainer">
+        <stack-layout class="testContainer" height="3.5cm">
             <simple-label text="top right, left" align="top, right" text-align="left" class="w2in"/>
         </stack-layout>
-        <stack-layout class="testContainer">
+        <stack-layout class="testContainer" height="3.5cm">
             <simple-label text="middle left, right" align="middle left" text-align="right" class="w2in"/>
         </stack-layout>
-        <stack-layout class="testContainer">
+        <stack-layout class="testContainer" height="3.5cm">
             <simple-label text="bottom center, center" align="bottom center" text-align="center" class="w2in"/>
         </stack-layout>
 
@@ -51,9 +51,7 @@ orientationReload=true
         // color and background
     // color
     // background (full monte)
-        <stack-layout background="lightblue url('images/zeus.jpg') no-repeat center contain" width="3in" height="3in" >
-            <simple-label text="background"/>
-        </stack-layout>
+        <simple-label text="background" backgroundSettings="lightblue url('images/zeus.jpg') no-repeat center contain" width="3in" height="3in" />
 
         //https://www.w3.org/People/Bos/Stylesheets/textfont.html
 

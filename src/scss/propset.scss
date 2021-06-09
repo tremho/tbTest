@@ -6,10 +6,11 @@
   border-width: 2px;
   margin: 4px;
   position: relative;
-  height: 1in;
+  //height: 3.5cm;  this isn't recognized in {N} for some reason
 }
 .w2in {
   width: 2in;
+  font-size: 1em;
   background-color: skyblue;
 }
 .vcenter {
