@@ -51,7 +51,28 @@ orientationReload=true
         // color and background
     // color
     // background (full monte)
-        <simple-label text="background" backgroundSettings="lightblue url('images/zeus.jpg') no-repeat center contain" width="3in" height="3in" />
+        <simple-label text="background" background-settings="lightblue url('images/zeus.jpg') no-repeat center contain" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="background-color" background-color="lightblue" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="background-image web" background-image="url('https://mdn.mozillademos.org/files/7693/catfront.png')" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="position 25% 25%" background-image="url('images/zeus.jpg')" background-position="25% 25%" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="contain" background-image="url('images/zeus.jpg')" background-size="contain" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="background- all" background-image="url('images/zeus.jpg')" background-repeat="no-repeat" background-position="center" background-size="contain" width="3in" height="3in" />
+        <fill-space height="1cm"/>
+        <simple-label text="class sanity check1" class="sanity"/>
+        <fill-space height="1cm"/>
+        <simple-label text="class sanity check2" className="sanity"/>
+        <fill-space height="1cm"/>
+        <simple-label text="css color" class="backcss-clr" />
+        <fill-space height="1cm"/>
+        <simple-label text="css image tiny center" class="backcss-tinyC" />
+        <fill-space height="1cm"/>
+        <simple-label text="css image all" class="backcss-all" />
+
 
         //https://www.w3.org/People/Bos/Stylesheets/textfont.html
 
