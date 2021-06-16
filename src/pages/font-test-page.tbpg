@@ -1,0 +1,88 @@
+#page font-test
+title="Font Tests"
+menu-id="main"
+orientationReload=true
+
+
+// For this test, we need to have
+
+#content
+
+<simple-label text="Font Tests"/>
+
+<scroll-view height="100%">
+    <fill-space height="1cm"/>
+
+    //https://www.w3.org/People/Bos/Stylesheets/textfont.html
+
+    // Font characteristics
+    <simple-label text="standard, default"/>
+    <simple-label text="font-size 16pt" font-size="16pt"/>
+    <simple-label text="font-weight bold" font-weight="bold"/>
+    <simple-label text="font-weight 250" font-weight="250"/>
+    <stack-layout background="yellow" padding="1em">
+    <simple-label text="font-stretch requires proper fonts"/>
+    <simple-label text="font-stretch condensed" font-stretch="condensed"/>
+    <simple-label text="font-stretch expanded" font-stretch="expanded"/>
+    <simple-label text="font-stretch ultra-expanded" font-stretch="ultra-expanded"/>
+    <simple-label text="font-stretch ultra-condensed" font-stretch="ultra-condensed"/>
+    <simple-label text="font-stretch 50%" font-stretch="50%"/>
+    <simple-label text="font-stretch 100%" font-stretch="100%"/>
+    <simple-label text="font-stretch 150%" font-stretch="150%"/>
+    </stack-layout>
+    <stack-layout background="aliceblue" padding="1em">
+    <simple-label text="So do tilted styles"/>
+    <simple-label text="font-style normal" font-style="normal"/>
+    <simple-label text="font-style italic" font-style="italic"/>
+    <simple-label text="font-style oblique" font-style="oblique"/>
+    <simple-label text="oblique 40deg" font-style="oblique 40deg"/>
+    <simple-label text="oblique -40deg" font-style="oblique -40deg"/>
+    </stack-layout>
+    <simple-label text="font-variant normal" font-variant="normal"/>
+    <simple-label text="font-variant small-caps" font-variant="small-caps"/>
+
+    <simple-label text="Going to test loaded fonts"/>
+    <simple-label text="Champignon" font-family="Champignon" margin="1em"/>
+    <simple-label text="Circus" font-family="Circus" margin="1em"/>
+    <simple-label text="Fancy Heart Script" font-family="Fancy Heart Script" margin="1em"/>
+    <simple-label text="GRUNJA" font-family="GRUNJA" margin="1em"/>
+    <simple-label text="Marketing Script" font-family="Marketing Script" margin="1em"/>
+    <simple-label text="TEAMSPIR" font-family="TEAMSPIR" margin="1em"/>
+
+    <text-area text="Far out in the uncharted backwaters of the unfashionable end of the western spiral arm of the Galaxy lies a small unregarded yellow sun."
+               font='ultra-expanded 1em/2em "Marketing Script"' color="goldenrod" width="3in" align="center" border="solid black 1px"/>
+    <text-area text="And around that miserable yellow sun circles a naively blue wet pebble crawling with stupidity."
+               class="textBoxCSS"/>
+    //font	(full monte))
+    //font-family	string+	inherited (-)
+    //font-weight	..., -2, -1, 0, 1, 2,...	inherited (0)	1=bold, 2=extra-bold, etc.
+    //font-expansion	..., -2, -1, 0, 1, 2,...	inherited (0)	0=normal, 1=expanded, etc.
+    //font-style	(italic|slanted|roman|small-caps)+	inherited (roman)
+    //font-size	..., -2, -1, 0, 1, 2,...|length	0 (-)	n=1.2^n times parent's size; lengthin pt
+    //encoding	encoding	inherited (none)	Postscript-like encoding vector
+
+    //text.spacing	number	100%	2.0=double space between letters
+    //text.transform	lowercase|uppercase|capitalize|none	inherited (none)
+    //text.underline	0|1|2	inherited (0)
+    //text.strikethrough	0|1|2	inherited (0)
+    //text.overline
+
+    // Line breaks and clipping
+
+    //break.before	number|length	none
+    //break.after	number|length	none
+    //rule.before	number|length	none	implies break.before
+    //rule.after	number|length	none	implies break after
+    //rule.left	number|length	none
+    //rule.right	number|length	none
+    //rule.thickness	number|length	inherited (-)
+    //rule.style	keyword	inherited (-)	single, double, etched, etc.
+    //rule.color	color	inherited (-)
+    //margin.left	number|length	0
+    //margin.right	number|length	0
+    //page.before	-2, -1, 0, 1, 2	0	0=don't care, 2=required
+    //page.after	-2, -1, 0, 1, 2	0	-2=never, -1=discourage
+
+    <fill-space height="2cm"/>
+
+</scroll-view>

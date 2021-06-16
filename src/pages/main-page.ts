@@ -59,6 +59,10 @@ export function onToolAction(toolEvent:any) {
     state = (state === 'on') ? 'off' : 'on'
     toolEvent.app.setToolState(toolEvent.id, state)
     Log.warn('current tool state is ', state)
+
+    if(toolEvent.id === 'TB1') {
+        toolEvent.app.navigateToPage('font-test-2')
+    }
 }
 export function onMenuAction(menuEvent:any) {
     // Log.info('main sees a menu action for ',menuEvent.id)

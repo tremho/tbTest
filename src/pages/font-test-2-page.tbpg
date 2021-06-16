@@ -1,0 +1,39 @@
+#page font-test-2
+title="Font Tests"
+menu-id="main"
+orientationReload=true
+
+
+// For this test, we need to have
+
+#content
+
+<simple-label text="Font Tests"/>
+
+<scroll-view height="100%">
+    <fill-space height="1cm"/>
+
+    <simple-label text="Fonts we've defined"/>
+    <simple-label text="Sans  The QBF jumped easily 123 @!%?" fontName="Sans"/>
+    <simple-label text="Sans-Thin  The QBF jumped easily 123 @!%?" fontName="Sans-Thin"/>
+    <simple-label text="Sans-Light  The QBF jumped easily 123 @!%?" fontName="Sans-Light"/>
+    <simple-label text="Sans-Medium  The QBF jumped easily 123 @!%?" fontName="Sans-Medium"/>
+    <simple-label text="Sans-Bold  The QBF jumped easily 123 @!%?" fontName="Sans-Bold"/>
+    <simple-label text="Sans-Heavy  The QBF jumped easily 123 @!%?" fontName="Sans-Heavy"/>
+    <simple-label text="Sans-Condensed  The QBF jumped easily 123 @!%?" fontName="Sans-Condensed"/>
+    <simple-label text="Sans-Condensed-light  The QBF jumped easily 123 @!%?" fontName="Sans-Condensed-Light"/>
+    <simple-label text="Sans-Condensed-bold  The QBF jumped easily 123 @!%?" fontName="Sans-Condensed-Bold"/>
+    <simple-label text="Sans-Mono  The QBF jumped easily 123 @!%?" font-name="Sans-Mono"/>
+    <simple-label text="Serif  The QBF jumped easily 123 @!%?" font-name="Serif"/>
+    <simple-label text="Serif-Bold  The QBF jumped easily 123 @!%?" font-name="Serif-Bold"/>
+    <simple-label text="Serif-Mono  The QBF jumped easily 123 @!%?" font-name="Serif-Mono" color="red"/>
+    <simple-label text="Smallcaps The QBF jumped easily 123 @!%?" font-name="Smallcaps" color="red"/>
+    <simple-label text="Marker The QBF jumped easily 123 @!%?" font-name="Marker" color="red"/>
+    <simple-label text="Marker-bold The QBF jumped easily 123 @!%?" font-name="Marker-Bold" color="red"/>
+    <simple-label text="Script The QBF jumped easily 123 @!%?" font-name="Script" color="red"/>
+    <simple-label text="Script-bold The QBF jumped easily 123 @!%?" font-name="Script-Bold" color="red"/>
+
+
+    <fill-space height="2cm"/>
+
+</scroll-view>
