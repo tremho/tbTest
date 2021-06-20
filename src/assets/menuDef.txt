@@ -34,7 +34,7 @@ DEFINE MENU "main"
     #EDIT_SELECTALL:selectall,Select All
 
 #OPTIONS!Options
-#FOO,Foo<icon=/Users/sohmert/tbd/sniff/app/images/socicons/heartType/0_smile.png>
+#FOO,Foo<icon=menu-icons/like-icon.png>
 #BAR,Bar<tooltip=Now is the time>
 #BAZ,Baz
 >>OPTIONS!Options
@@ -49,7 +49,7 @@ DEFINE MENU "main"
 <<
 
 #Tests!Tests
-#FILEAPI,File API Checks
+#FILEAPI,File API Checks[CmdOrCtrl+Shift+F]
 >>LAYOUT,Layout Tests
 #VERTICAL_STACK,Vertical Stack
 #HORIZONTAL_STACK,Horizontal Stack
@@ -88,14 +88,14 @@ DEFINE MENU "main"
 @D#HELP:help!Help
 
 DEFINE TOOLBAR "main"
-#TB1, 1<state=on,icon=whatever.png,icon:active=active.png,icon:disabled=disabled.png>[CmdOrCtrl+Shift+Alt+1]
-#TB2, 2<class=myclassyclassclass,icon=whatever.png,icon:active=active.png,icon:disabled=disabled.png,state=bliss>[CmdOrCtrl+Shift+Alt+2]
+#TB1, 1<state=default,icon=whatever.jpg,icon:active=active.png,icon:disabled=disabled.png>[CmdOrCtrl+Shift+Alt+1]
+#TB2, 2<class=myclassyclassclass,icon=whatever.jpg,icon:active=active.png,icon:disabled=disabled.png,state=active>[CmdOrCtrl+Shift+Alt+2]
 #TB3, 3<type=Example,tooltip=Far Out>[CmdOrCtrl+Shift+Alt+3]
 #TB4, 4<disabled>[CmdOrCtrl+Shift+Alt+4]
 
 DEFINE INDICATORS "main"
-#IN1, A<state=on>
-#IN2, B<state=default>
-#IN3, C<type=Example,tooltip=Cooliomente,state=on>
+#IN1, A<state=on, icon:on=active.png, icon:off=disabled.png>
+#IN2, B<state=default, icon=whatever.jpg>
+#IN3, C<type=Example,tooltip=Cooliomente,state=on,icon:on=active.png, icon:off=disabled.png>
 #IN4, D<state=off,icon:foobar=foobar.png>
 

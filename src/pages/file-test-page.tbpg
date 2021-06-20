@@ -5,6 +5,8 @@ menu-id = "main"
 #content
     <simple-label text="The page-id is $navInfo.pageId"/>
 
+    <scroll-view orientation="horizontal" width="800" height="100%">
+    <scroll-view height="100%">
     <fill-space height="1rem"/>
     <simple-label text="App Path = $$appPath"/>
     <fill-space height="1rem"/>
@@ -18,8 +20,8 @@ menu-id = "main"
     <simple-label text="write text $$writeText"/>
     <simple-label text="read written text $$writeTextVerify"/>
     <fill-space height="1rem"/>
-    <simple-label text="read binary $$readBinary"/>
-    <simple-label text="write binary $$writeBinary"/>
+    <simple-label text="write binary image $$writeBinary"/>
+    <simple-label text="read binary image $$readBinary"/>
     <fill-space height="1rem"/>
     <simple-label text="deleted file $$delete"/>
     <simple-label text="renamed file $$rename"/>
@@ -39,4 +41,7 @@ menu-id = "main"
     <fill-space height="1rem"/>
     <simple-label text="$$rmdir"/>
     <simple-label text="$$rmdir2"/>
+    </scroll-view> <!-- v -->
+    <fill-space height="2cm"/>
+    </scroll-view> <!-- h -->
 
