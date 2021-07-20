@@ -70,6 +70,7 @@ DEFINE MENU "main"
 >>MISC,Misc Tests
 #PREPROC,Pre-processor tests[Ctrl+Cmd+P]
 #PROPSET,Properties set tests[Ctrl+Cmd+S]
+#INTL,Intl values[Ctrl+Cmd+I]
 <<
 #--
 

@@ -1,17 +1,10 @@
 #component test-comp
 
 #layout
+
     <div action="press">
         <span>"$foobar"</span>
     </div>
-
-beforeLayout() {
-    this.com.addProperty('bind', 'testValues.mainLabel as foobar')
-}
-
-onAction(ev) {
-    console.log("onAction called")
-}
 
 <style>
     :host {

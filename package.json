@@ -8,8 +8,10 @@
   "dependencies": {
     "@riotjs/webpack-loader": "^5.0.0",
     "awesome-typescript-loader": "^5.2.1",
+    "base-64": "^1.0.0",
     "css-element-queries": "^1.2.3",
     "riot": "^5.3.3",
+    "sourcemap-codec": "^1.4.8",
     "typescript": "^4.2.4"
   },
   "devDependencies": {

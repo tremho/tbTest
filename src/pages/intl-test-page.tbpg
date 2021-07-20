@@ -1,0 +1,22 @@
+#page intl-test
+
+// no-title
+no-back
+title="Intl values"
+menu-id="main"
+toolbar-id="main"
+indicators-id="main"
+
+#content
+<simple-label text="Intl Values"/>
+<scroll-view height="100%">
+    <stack-layout>
+    <fill-space height="1rem"/>
+    <text-area text="$$months"/>
+    <text-area text="$$monthAbbr"/>
+    <fill-space height="1rem"/>
+    <text-area text="$$weekdays"/>
+    <text-area text="$$wdAbbr"/>
+    </stack-layout>
+</scroll-view>
+

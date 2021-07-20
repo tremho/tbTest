@@ -88,6 +88,10 @@ export function appStart(appContext:any) {
             appContext.navigateToPage('propset-test')
         })
 
+        appContext.registerMenuHandler('INTL', (menuEvent:any) => {
+            appContext.navigateToPage('intl-test')
+        })
+
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')
         })
