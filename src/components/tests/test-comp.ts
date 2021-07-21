@@ -7,9 +7,6 @@ beforeLayout and afterLayout and onAction
 
 export default class TestComp  {
     component:any;
-    constructor(component:any) {
-        this.component = component
-    }
 
     beforeLayout() {
         this.component.cm.addProperty('bind', 'testValues.mainLabel as foobar')
