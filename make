@@ -9,5 +9,5 @@ cd ../tbTest
 npm link thunderbolt-desktop
 npm link thunderbolt-common
 npm link thunderbolt-cli
-tbx build .
+tbx build --clean 
 
