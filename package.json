@@ -1,7 +1,6 @@
 {
   "name": "tbTest",
   "version": "1.0.0",
-  "projId": "com.tremho.tbtest",
   "description": "tester during development for thunderbolt-platform",
   "backMain": "src/tbAppBack.ts",
   "frontMain": "src/tbAppFront.ts",
@@ -15,7 +14,8 @@
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@types/node": "^15.3.0"
+    "@types/node": "^15.3.0",
+    "electron-builder": "^22.11.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,8 +25,50 @@
     "run": "tbx run",
     "nativescript": "./make && tbx nativescript",
     "nsAlone": "tbx nativescript",
-    "makeMobile": "./makemobile"
+    "makeMobile": "./makemobile",
+    "dist": "tbx build --clean && electron-builder"
   },
   "author": "tremho",
-  "license": "ISC"
+  "license": "ISC",
+  "build": {
+    "appId": "com.tremho.tbtest",
+    "copyright": "©2021 Tremho Berserker Development, LLC",
+    "electronVersion": "12.0.5",
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg",
+      "type": "development"
+    },
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "asar" : true,
+    "files": [
+      {
+        "filter": "tbAppBack.js",
+        "from": "build",
+        "to" : "."
+      },
+      {
+        "filter": "package.json",
+        "from": ".",
+        "to" : "."
+      },
+      {
+        "filter": "**/*",
+        "from": "build",
+        "to": "."
+      },
+      {
+        "filter": "**/*",
+        "from": "node_modules",
+        "to": "node_modules"
+      }
+    ],
+    "extraMetadata": {
+      "main": "tbAppBack.js"
+    }
+
+  }
 }
