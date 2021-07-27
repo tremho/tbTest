@@ -7,7 +7,7 @@ export function appStart(appContext:any) {
 
     // Log.debug('setup Model')
     const model = appContext.model;
-    model.addSection('testValues', {mainLabel: 'Hello, World! This is ThunderBolt!'})
+    model.addSection('testValues', {mainLabel: 'Hello, World! This is a test, by Jove!'})
 
     appContext.registerToolExtension('Example', ExampleIndicator)
 

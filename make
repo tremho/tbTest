@@ -6,8 +6,11 @@ cd ../thunderbolt-desktop; tsc; npm link
 cd ../thunderbolt-mobile; tsc; npm link
 cd ../thunderbolt-cli; tsc; npm link
 cd ../tbTest
-npm link thunderbolt-desktop
-npm link thunderbolt-common
-npm link thunderbolt-cli
+npm link @tremho/jove-desktop
+npm link @tremho/jove-common
+npm link @tremho/jove-cli
 tbx build --clean 
+
+
+
 

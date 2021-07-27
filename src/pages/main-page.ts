@@ -1,6 +1,6 @@
 
-import {MenuItem} from 'thunderbolt-common'
-// import {Log} from 'thunderbolt-common'
+import {MenuItem} from '@tremho/jove-common'
+// import {Log} from '@tremho/jove-common'
 // import LogTest from './logtest'
 export const Log = {
     debug(...a:any) {console.log(...a)},

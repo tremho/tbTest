@@ -1,5 +1,5 @@
 
-// import {ToolExtension} from "thunderbolt-common";
+// import {ToolExtension} from "@tremho/jove-common";
 
 // todo: we need declarations
 class CompInfo {

@@ -1,6 +1,6 @@
 
-import {targetPlatform} from 'thunderbolt-desktop'
-import {registerApp, TBBackApp, FrameworkBackContext} from "thunderbolt-common"
+import {targetPlatform} from '@tremho/jove-desktop'
+import {registerApp, TBBackApp, FrameworkBackContext} from "@tremho/jove-common"
 
 import * as myExtension from "./backExtensions/testExtension"
 

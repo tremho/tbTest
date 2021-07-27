@@ -1,7 +1,7 @@
 DEFINE RESOURCE PATH "resources"
 DEFINE MENU "main"
-@Dm#APP!ThunderBolt         // App menu - name of app (mac only)
-    @Dm#APP_ABOUT,About ThunderBolt
+@Dm#APP!Jove test         // App menu - name of app (mac only)
+    @Dm#APP_ABOUT,About Jove test
     @Dm#APP_CHECKUPDATE,Check for Update
     @Dm#--                                      // special notation for separator
     @Dm#APP_SERVICES:services,Services          // customary on Mac
