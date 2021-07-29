@@ -6,21 +6,21 @@
   "frontMain": "src/tbAppFront.ts",
   "dependencies": {
     "@riotjs/webpack-loader": "^5.0.0",
-    "@tremho/jove-common": "^0.6.4-prerelease-10",
-    "@tremho/jove-desktop": "^0.6.4-prerelease-1",
+    "@tremho/jove-common": "^0.6.5-prerelease-1",
+    "@tremho/jove-desktop": "^0.6.5-prerelease-1",
     "awesome-typescript-loader": "^5.2.1",
     "css-element-queries": "^1.2.3",
     "riot": "^5.3.3",
     "sourcemap-codec": "^1.4.8"
   },
   "devDependencies": {
-    "@tremho/jove-cli": "^0.6.4-prerelease-7",
+    "@tremho/jove-cli": "^0.6.5-prerelease-2",
     "electron-builder": "^22.11.7",
     "typescript": "^4.3.5",
     "webpack": "^4.46.0"
   },
   "scripts": {
-    "postinstall": "cd node_modules/@tremho/jove-desktop && npm install",
+    "postinstall": "cd node_modules/@tremho/jove-desktop && npm install && cd node_modules/@tremho/jove-cli && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "devMake": "./make",
     "devRun": "./make && tbx run",
@@ -29,7 +29,7 @@
     "nativescript": "./make && tbx nativescript",
     "nsAlone": "tbx nativescript",
     "makeMobile": "./makemobile",
-    "dist": "tbx build --clean && electron-builder -mw"
+    "dist": "tbx build --clean && rm -fr dist && electron-builder"
   },
   "author": "tremho",
   "license": "ISC",
