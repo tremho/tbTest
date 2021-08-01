@@ -13,31 +13,8 @@ export function appStart(appContext:any) {
 
 
     // This must be here or nothing appears on screen.  TODO: look into this and fix defaults and/or display errors
-    appContext.setPageData('file-test-page', {
-        // exist1: false,
-        // exist2: false,
-        // readtext: false,
-        // readtextErr: false,
-        // writetext: false,
-        // writetextErr: false,
-        // rename: false,
-        // renameErr: false,
-        // move: false,
-        // moveErr: false,
-        // copy: false,
-        // copyErr: false,
-        // stat: false,
-        // stat2: false,
-        // statErr: false,
-        // mkdir: false,
-        // mkdir2: false,
-        // mkdirErr: false,
-        // rmdir: false,
-        // rmdir2: false,
-        // rmdirErr: false,
-        // readdir: false,
-        // readdirErr: false
-    })
+    appContext.setPageData('file-test-page', {})
+    appContext.setPageData('sys-info-page', {})
 
     // Log.debug('setup Menu')
     return appContext.setupMenu('menuDef.txt').then(() => {

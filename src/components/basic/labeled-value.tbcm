@@ -1,0 +1,27 @@
+/*
+Labeled-value
+
+A text display that shows a label in bold, and then the value for that label
+bind properties:
+label -- the text for the label
+value -- the text for the value
+
+*/
+
+
+#component labeled-value
+
+#layout
+    <div>
+        <span class="label">$label</span><span>:&nbsp;</span><span class="value">$value</span>
+    </div>
+<style>
+.label {
+    margin-left: 6px;
+    font-weight: bold;
+}
+.value {
+    margin-right:6px;
+    font-weight: normal;
+}
+</style>

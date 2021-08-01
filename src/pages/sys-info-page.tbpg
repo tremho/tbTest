@@ -1,0 +1,32 @@
+
+#page sys-info
+title="System Info"
+menu-id="main"
+orientationReload=true
+
+#content
+    <simple-label text="The page-id is $navInfo.pageId"/>
+
+    <labeled-value label="Page" value="$navInfo.pageId"/>
+    <labeled-value label="Check" value="$$check"/>
+<fill-space height="15px"/>
+    <labeled-value label="App Name" value="$$appName"/>
+<fill-space height="15px"/>
+    <labeled-value label="Platform" value="$$env.runtime.platform.name  $$env.runtime.platform.version"/>
+    <labeled-value label="Build Framework" value="$$env.build.framework.name  $$env.build.framework.version"/>
+    <labeled-value label="Build Node Version" value="$$env.build.node"/>
+<fill-space height="15px"/>
+    <labeled-value label="Host" value="$$host"/>
+    <labeled-value label="Host Version" value="$$hostVersion"/>
+    <labeled-value label="Front technology" value="$$front"/>
+    <labeled-value label="Front technology Version" value="$$frontVersion"/>
+    <labeled-value label="Runtime Node Version" value="$$env.runtime.framework.node"/>
+    <labeled-value label="Runtime Electron Version" value="$$env.runtime.framework.electron"/>
+    <labeled-value label="Runtime Riot Version" value="$$env.runtime.framework.riot"/>
+<fill-space height="15px"/>
+    <labeled-value label="CWD" value="$$path.cwd"/>
+    <labeled-value label="assets" value="$$path.assetsPath"/>
+    <labeled-value label="appData" value="$$path.appDataPath"/>
+    <labeled-value label="documents" value="$$path.documentsPath"/>
+    <labeled-value label="downloads" value="$$path.downloadsPath"/>
+    <labeled-value label="desktop" value="$$path.desktopPath"/>

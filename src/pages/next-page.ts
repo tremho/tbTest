@@ -17,3 +17,7 @@ export function pageStart(app:any) {
 export function onClick(arg:any) {
     console.log('click from component', arg)
 }
+
+export function goSysInfo(ed:any) {
+    ed.app.navigateToPage('sys-info')
+}

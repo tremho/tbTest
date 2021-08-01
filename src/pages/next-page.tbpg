@@ -23,3 +23,6 @@ indicators-id="main"
         <text-area text="Now is the time for all good men to come to the aid of their country while the quick brown fox
         is jumping over the lazy dog's back.  This is a fair amount of text, I hope it will suffice"/>
     </scroll-view>
+
+    <fill-space height="10px"/>
+    <simple-button text="see sys info" action="goSysInfo"/>

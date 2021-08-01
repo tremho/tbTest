@@ -8,7 +8,7 @@ menu-id = "main"
     <scroll-view orientation="horizontal" width="800" height="100%">
     <scroll-view height="100%">
     <fill-space height="1rem"/>
-    <simple-label text="App Path = $$appPath"/>
+    <simple-label text="Assets Path = $$assetsPath"/>
     <fill-space height="1rem"/>
 
     <simple-label text="file exists (existing) $$exist1"/>
