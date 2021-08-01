@@ -1,0 +1,23 @@
+{
+  "name": "tb-test",
+  "version": "1.0.0",
+  "description": "tester during development for Jove",
+  "backMain": "src/tbAppBack.ts",
+  "frontMain": "src/tbAppFront.ts",
+  "dependencies": {
+    "@riotjs/webpack-loader": "^5.0.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-element-queries": "^1.2.3",
+    "riot": "^5.3.3",
+    "sourcemap-codec": "^1.4.8"
+  },
+  "scripts": {
+    "postinstall": "npm run ebpi && npm run initDesktop && npm run initCli",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ebpi": "electron-builder install-app-deps",
+    "initDesktop" : "cd node_modules/@tremho/jove-desktop && npm install",
+    "initCli" : "cd node_modules/@tremho/jove-cli && npm install"
+  },
+  "author": "tremho",
+  "license": "ISC"
+}
