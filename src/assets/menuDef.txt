@@ -17,7 +17,8 @@ DEFINE MENU "main"
     #FILE_NEW,New...
     #FILE_OPEN,Open...
     @m#FILE_CLOSE:close, Close       // on mac, close the current app window, don't quit app
-    @wuai#FILE_QUIT:quit, Quit       // all others, close and quit
+    @uai#APP_QUIT:quit, Quit         // all others, close and quit
+    @w#APP_QUIT:quit, Exit            // windows says "Exit" to quit
 
 #EDIT!Edit                 // edit menu
     #EDIT_UNDO:undo,Undo
