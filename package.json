@@ -12,6 +12,7 @@
     "sourcemap-codec": "^1.4.8"
   },
   "devDependencies": {
+    "@tremho/pub-bumper": "0.0.1",
     "electron-builder": "^22.11.7",
     "typescript": "^4.3.5",
     "webpack": "^4.46.0"
