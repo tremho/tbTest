@@ -2,7 +2,7 @@
 
 cmt=$1
 
-pub-bump -m "$cmt" -config pub-bump.json
+npm run bump "$cmt"
 
 pwd
 git commit -am "${cmt}"
