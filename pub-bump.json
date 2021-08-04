@@ -1,7 +1,7 @@
 
 {
   "preReleaseTag": "alpha",
-  "doPublish": false,
+  "doPublish": true,
   "projectDirs" : [
     "../thunderbolt-desktop",
     "../thunderbolt-common",
