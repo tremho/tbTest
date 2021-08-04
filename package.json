@@ -6,7 +6,7 @@
   "frontMain": "src/tbAppFront.ts",
   "dependencies": {
     "@riotjs/webpack-loader": "^5.0.0",
-    "@tremho/jove-common": "^0.6.9-pre-release.9",
+    "@tremho/jove-common": "^0.6.9-pre-release.22",
     "@tremho/jove-desktop": "^0.6.9-pre-release.1",
     "awesome-typescript-loader": "^5.2.1",
     "css-element-queries": "^1.2.3",
