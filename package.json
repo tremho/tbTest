@@ -14,7 +14,7 @@
     "sourcemap-codec": "^1.4.8"
   },
   "devDependencies": {
-    "@tremho/jove-cli": "^0.6.9-pre-release.11",
+    "@tremho/jove-cli": "^0.6.9-pre-release.12",
     "@tremho/pub-bumper": "^0.0.2",
     "electron-builder": "^22.11.7",
     "typescript": "^4.3.5",
