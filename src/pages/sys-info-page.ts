@@ -7,12 +7,19 @@ export function pageStart(app:any, context:any) {
 
     let fwFront = ''
     let fwFrontVersion = ''
+    let fwHost = ''
+    let fwHostVersion = ''
     if(env.runtime.framework.riot) {
         fwFront = 'riot'
         fwFrontVersion = env.runtime.framework.riot
+        fwHostVersion = env.runtime.framework.electron
+        fwHost = fwHostVersion ? 'electron' : '???'
+    } else if(env.runtime.framework.nativescript) {
+        fwFront = 'nativescript'
+        fwFrontVersion = env.runtime.framework.nativescript
+        fwHost = 'TODO'
+        fwHostVersion = 'TODO' // TODO: get NS host os and version info in env.
     }
-    let fwHost = env.runtime.framework.electron ? 'electron' : '???'
-    let fwHostVersion = env.runtime.framework.electron
     let nodeVersion = env.runtime.framework.version;
     app.setPageData('sys-info-page', 'appName', env.build.app.name)
     app.setPageData('sys-info-page', 'host', fwHost)
