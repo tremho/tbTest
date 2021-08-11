@@ -14,9 +14,9 @@ export function pageStart(app:any, context:any) {
         fwFrontVersion = env.runtime.framework.riot
         fwHostVersion = env.runtime.framework.electron
         fwHost = fwHostVersion ? 'electron' : '???'
-    } else if(env.runtime.framework.nativescript) {
-        fwFront = 'nativescript'
-        fwFrontVersion = env.runtime.framework.nativescript
+    } else if(env.runtime.framework.nativeScript) {
+        fwFront = 'NativeScript'
+        fwFrontVersion = env.runtime.framework.nativeScript
         fwHost = 'TODO'
         fwHostVersion = 'TODO' // TODO: get NS host os and version info in env.
     }
