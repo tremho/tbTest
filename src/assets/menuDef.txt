@@ -3,6 +3,7 @@ DEFINE MENU "main"
 
 @Dm#APP!Jove test         // App menu - name of app (mac only)
     @Dm#APP_ABOUT,About Jove test
+    @Dm#ABOUT_JOVE,About Jove Framework
     @Dm#APP_CHECKUPDATE,Check for Update
     @Dm#--                                      // special notation for separator
     @Dm#APP_SERVICES:services,Services          // customary on Mac
@@ -89,6 +90,10 @@ DEFINE MENU "main"
 @D#WINDOW:windowMenu!Window
 
 @D#HELP:help!Help
+
+@A#ABOUT!About
+    #APP_ABOUT,About Jove Test
+    #ABOUT_JOVE,About Jove Framework
 
 DEFINE TOOLBAR "main"
 #TB1, 1<state=default,icon=whatever.jpg,icon:active=active.png,icon:disabled=disabled.png>[CmdOrCtrl+Shift+Alt+1]

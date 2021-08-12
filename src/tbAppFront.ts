@@ -72,6 +72,24 @@ export function appStart(appContext:any) {
         appContext.registerMenuHandler('FILEAPI', (menuEvent:any) => {
             appContext.navigateToPage('file-test')
         })
+
+        // appContext.registerMenuHandler('APP_ABOUT', (menuEvent:any) => {
+        //     console.log('APP_ABOUT Selected')
+        //     return true
+        // })
+        appContext.registerMenuHandler('ABOUT_JOVE', (menuEvent:any) => {
+            console.log('ABOUT_JOVE Selected')
+            const options = {
+                title:'About Jove Framework',
+                message:'Jove is all you need',
+                detail: 'Development for desktop and mobile apps\n©2021 Tremho Berserker Development, LLC',
+                buttons: ['O&kay']
+            }
+            appContext.messageBox(options).then((rt:any) => {
+                console.log(rt)
+            })
+            return true
+        })
     })
 
 }
