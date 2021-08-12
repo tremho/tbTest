@@ -90,8 +90,10 @@ DEFINE MENU "main"
 @D#WINDOW:windowMenu!Window
 
 @D#HELP:help!Help
+    @w#APP_ABOUT,About Jove Test
+    @w#ABOUT_JOVE,About Jove Framework
 
-@A#ABOUT!About
+@Aai#ABOUT!About
     #APP_ABOUT,About Jove Test
     #ABOUT_JOVE,About Jove Framework
 
