@@ -5,13 +5,13 @@ echo "remove npm @tremho modules"
 npm uninstall @tremho/jove-desktop @tremho/jove-common @tremho/jove-cli
 
 echo "updating common"
-cd ../thunderbolt-common; tsc;  npm link
+cd ../thunderbolt-common; npm run prepublish;  npm link
 echo "updating desktop"
-cd ../thunderbolt-desktop; tsc; npm link
+cd ../thunderbolt-desktop; npm run prepublish; npm link
 echo "updating mobile"
-cd ../thunderbolt-mobile; tsc; npm link
+cd ../thunderbolt-mobile; npm run prepublish; npm link
 echo "updating cli"
-cd ../thunderbolt-cli; tsc; npm link
+cd ../thunderbolt-cli; npm run prepublish; npm link
 cd ../tbTest
 
 
