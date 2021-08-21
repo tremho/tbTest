@@ -18,18 +18,18 @@ const myExtension = {
 
 class TBTestApp implements TBBackApp {
 
-    appStart(context: FrameworkBackContext): Promise<void> {
+    appStart(context: FrameworkBackContext): Promise<unknown> {
         console.log('Back App Start called', Date.now())
 
         console.log('registering as test', myExtension)
         context.registerExtensionModule('test', myExtension)
 
-        return Promise.resolve(undefined);
+        return Promise.resolve();
     }
 
-    appExit(context: FrameworkBackContext): Promise<void> {
+    appExit(context: FrameworkBackContext): Promise<unknown> {
         console.log('Back App Exit called')
-        return Promise.resolve(undefined);
+        return Promise.resolve();
     }
 }
 
